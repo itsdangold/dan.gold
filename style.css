@@ -1,7 +1,28 @@
-#main{
-	width:auto;
-	border:2px solid #000;
+html { 
+  background: url(mountains.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+
 }
 h1{
+	display: inline-block;
 	text-transform: uppercase;
+	padding:15px;font-family: 'Montserrat', sans-serif;
+	border: 5.5px solid rgba(255,255,255,0.75);
+	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	color:rgba(255,255,255,0.75);
+}
+h1:hover{
+		border: 5.5px solid rgba(255,255,0,0.75);
+		color:rgba(255,255,0,0.75);		
 }
