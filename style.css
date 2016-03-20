@@ -27,10 +27,11 @@ h1{
   	text-align: center;
 }
 img{
+	position: fixed;
 	width: 75px;
 	height: auto;
 	-webkit-transition: opacity 0.5s;
-    transition: opacity 0.5s;
+    	transition: opacity 0.5s;
 	opacity: 0.3;
 	margin: auto;
 	padding-left: 15px;
