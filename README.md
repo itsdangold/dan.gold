@@ -1,1 +1,1 @@
-# itsdangold.github.io
+Personal website of Dan Gold
