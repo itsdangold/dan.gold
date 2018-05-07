@@ -18,8 +18,9 @@ img {
     height: auto;
 }
 
-body {
+body, html {
     font-family: 'IBM Plex Sans', 'Helvetica', sans-serif;
+    height: 100%;
     color: #0c0c0c;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -31,7 +32,40 @@ p::selection, a::selection, h1::selection, h2::selection, h3::selection, h4::sel
     fill: #fff;
 }
 
-main{
+
+.first {
+    background-color: #0c0c0c;
+    z-index: 30000;
+}
+
+.first.wipe {
+    transition: transform 1.15s ease;
+    transition-delay: 1s
+}
+
+.second {
+    background-color: rgb(20, 20, 20);
+    z-index: 29000;
+}
+
+.second.wipe {
+    transition: transform 1.15s ease;
+    transition-delay: 1.5s
+}
+
+.screen-intro {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+}
+
+.wipe {
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+main {
     display: grid;
     z-index: 15;
     grid-template-rows: 99px calc(100% - 99px) auto auto;
@@ -55,8 +89,6 @@ section {
     display: flex;
     flex-direction: column;
     min-height: 100px;
-    /* background-color: #fff;
-    border-bottom: 1px solid #bbb; */
 }
 
 .icon-wrapper, .menu-container {
@@ -200,12 +232,25 @@ section {
 }
 
 .home-title {
-    background-color: #A4A4A4;
+    background-color: rgba(170, 170, 170, 0.85);
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-gap: .5em;
     align-content: end;
     padding: 2em 0;
+}
+
+.home-title::after{
+    content: '';
+    background-image: url('assets/media/work/portfolio-pattern.jpg');
+    background-size: cover;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 .home-title div {

@@ -1,3 +1,8 @@
+$(document).ready(function(){
+  $('.screen-intro').addClass('wipe');
+});
+
+
 $('.menu-icon, .mobile-menu-container > a').click(function(){
     $('.nav-wrapper').toggleClass('active-nav');
     $('.menu-icon').toggleClass('active-menu-icon');
