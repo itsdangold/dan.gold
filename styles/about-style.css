@@ -1,0 +1,241 @@
+/* General */
+
+body, nav {
+    background-color: #161616;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Navigation */
+
+.navigation__links a:last-child {
+    color: #fff;
+}
+
+.navigation__links a:last-child::after {
+    width: 5px;
+    height: 5px;
+    content: '';
+    background-color: #FFC759;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+/* Main Content */
+
+/* Introduction */
+
+.about__intro--subtext p {
+    padding: 1em 0;
+    max-width: 750px;
+}
+
+.intro__image {
+    display: none;
+}
+
+/* Info */
+
+.info__container {
+    padding: 3em 0;
+}
+
+.info__container h3 {
+    padding: .25em 0;
+}
+
+p.item--body {
+    padding-top: 2em;
+    max-width: 750px;
+}
+
+.info--skillset {
+    display: grid;
+    grid-gap: 2em;
+}
+
+.skillset--item li{
+    color: rgb(136, 136, 136);
+    padding: .5em 0;
+}
+
+/* Contact */
+
+.about__contact h4 {
+    background-color: rgb(31, 31, 31);
+    padding: 2rem;
+    font-size: 1.5em;
+    color: #838383;
+}
+
+.about__contact .contact__info {
+    padding: 3rem 2rem;
+    background-color: #fff;
+    display: grid;
+    grid-gap: 2em;
+}
+
+.about__contact .contact__info p {
+    color: #9E9E9E;
+    padding-bottom: .5em;
+}
+
+.contact__email h3 {
+    color: #4F4F4F;
+    font-size: 3em;
+}
+
+.contact__social a {
+    color: #4F4F4F;
+    transition: color .25s ease-out;
+    font-size: 1.25em;
+}
+
+.contact__social a:not(:last-child) {
+    margin-right: 1em;
+}
+
+a.social--twitter:hover{
+    color: rgb(22, 181, 255);
+}
+a.social--linkedin:hover{
+    color: #0077B5;
+}
+a.social--dribbble:hover{
+    color: rgb(255, 22, 119);
+}
+a.social--github:hover{
+    color: rgb(156, 156, 156);
+}
+a.social--tumblr:hover{
+    color: #356dbb;
+}
+
+/* Footer */
+
+footer {
+    padding: 2rem;
+    background-color: #F3F3F3;
+}
+
+footer p {
+    color: #8C8C8C;
+    display: inline-block;
+    font-size: .85em;
+    padding: .5em 0;
+    margin-right: 2em;
+}
+
+
+/* Media queries */
+
+@media screen and (min-width: 650px) {
+
+    .about__contact h4, .about__contact .contact__info {
+        padding-left: calc(2rem + 120px);
+    }
+
+    footer {
+        padding-left: calc(2rem + 120px);
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .about__introduction {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 3em;
+        justify-content: space-between;
+    }
+    .about__intro--subtext {
+        margin-top: 2em;
+    }
+    .intro__image {
+        display: inline-block;
+        overflow: hidden;
+        max-width: 350px;
+        justify-self: end;
+    }
+    .intro__image img {
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (min-width:850px){
+    .about__introduction {
+        grid-template-columns: 2fr 1fr;
+    }
+    .about__info {
+        margin-top: 0em;
+    }
+}
+
+@media screen and (min-width:950px){
+    .about__intro--subtext {
+        margin-top: 1em;
+        margin-left: 120px;
+    }
+    .about__contact h4, .about__contact .contact__info {
+        padding-left: calc(4rem + 120px);
+    }
+
+    footer {
+        padding-left: calc(4rem + 120px);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about__intro--subtext {
+        margin-top: 1em;
+        margin-left: 120px;
+    }
+    .info--skillset, .about__contact .contact__info {
+        grid-template-columns: max-content max-content;
+        grid-gap: 5em;
+    }
+    .about__contact .contact__info {
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    .social__container {
+        padding-top: 1em;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .about__intro--subtext {
+        margin-top: 2em;
+    }
+    .about__contact .contact__info {
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+    .social__container {
+        padding-top: 1em;
+    }
+    .about__contact h4, .about__contact .contact__info {
+        padding-left: calc(9rem + 120px);
+    }
+
+    footer {
+        padding-left: calc(9rem + 120px);
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .about__intro--subtext {
+        margin-left: 12rem;
+    }
+    .about__contact h4, .about__contact .contact__info {
+        padding-left: 21rem;
+    }
+
+    footer {
+        padding-left: 21rem;
+    }
+}
