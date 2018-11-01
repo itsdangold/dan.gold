@@ -90,8 +90,11 @@ p {
 }
 
 .casestudy__main {
-    display: grid;
     grid-gap: 1em;
+}
+
+.casestudy__main > div {
+    padding-bottom: 2em;
 }
 
 .casestudy__main > div > h3 {
@@ -145,6 +148,7 @@ footer a:hover h1 {
 
 @media screen and (min-width: 700px) {
     section.casestudy__main {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
