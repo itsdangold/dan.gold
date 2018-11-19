@@ -133,17 +133,6 @@ footer p {
 
 /* Media queries */
 
-@media screen and (min-width: 650px) {
-
-    .about__contact h4, .about__contact .contact__info {
-        padding-left: calc(2rem + 120px);
-    }
-
-    footer {
-        padding-left: calc(2rem + 120px);
-    }
-}
-
 @media screen and (min-width: 750px) {
     .about__introduction {
         display: grid;
@@ -163,6 +152,12 @@ footer p {
     .intro__image img {
         object-fit: cover;
         border-radius: 5px;
+    }
+    .about__contact h4, .about__contact .contact__info {
+        padding-left: calc(2rem + 120px);
+    }
+    footer {
+        padding-left: calc(2rem + 120px);
     }
 }
 
