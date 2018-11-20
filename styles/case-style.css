@@ -14,6 +14,15 @@ p {
     font-weight: 300;
 }
 
+.coming-soon {
+    background-color: #72b3be;
+    color: #fff;
+    align-self: flex-start;
+    padding: 1em;
+    display: inline-block;
+    margin-top: 3em;
+}
+
 /* Navigation */
 
 .navigation__links a:first-child {

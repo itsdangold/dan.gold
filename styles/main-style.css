@@ -80,7 +80,7 @@ body {
 }
 
 h1 {
-    font-size: 3.5em;
+    font-size: 3.375em;
     color: #fff;
 }
 
@@ -255,10 +255,10 @@ main > section:not(.about__contact) {
 
 @media screen and (min-width: 1700px) {
     p {
-        font-size: 1.5em;
+        font-size: 1.25em;
     }
     h6 {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
     .indent__container {
         grid-template-columns: 12rem 1fr;
