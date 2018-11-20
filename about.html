@@ -100,9 +100,11 @@
             <div class="contact__info">
                 <div class="contact__email" data-aos="fade-in">
                     <p>Get in touch</p>
-                    <button class='copy--email'> <h3>hello@dan.gold</h3></button>
+                    <button class='copy--email' onclick="copyEmail()">
+                        <h3 id='email--text'>hello@dan.gold</h3>
+                    </button>
                 </div>
-                <div class="contact__social">
+                <div class="contact__social" data-aos="fade-in">
                     <p>Elsewhere on the web</p>
                     <div class="social__container">
                         <a href="https://twitter.com/itsdangold" target="__blank" class='social--twitter'>Twitter</a>
@@ -126,6 +128,32 @@
             duration: 2000,
             easing: 'ease-out-back'
         });
+
+        function copyEmail() {  
+            var copyButton = document.querySelector('.copy--email');
+            copyButton.classList.add('copy--email-active');
+            setTimeout(() => {
+                copyButton.classList.remove('copy--email-active');
+            }, 3000);
+            // Select the email link anchor text  
+            var emailLink = document.getElementById("email--text");
+            var range = document.createRange();  
+            range.selectNode(emailLink);  
+            window.getSelection().addRange(range);  
+
+            try {  
+                // Now that we've selected the anchor text, execute the copy command  
+                var successful = document.execCommand('copy');  
+                var msg = successful ? 'successful' : 'unsuccessful';  
+                console.log('Copy email command was ' + msg);  
+            } catch(err) {  
+                console.log('Oops, unable to copy');  
+            }  
+
+            // Remove the selections - NOTE: Should use
+            // removeRange(range) when it is supported  
+            window.getSelection().removeAllRanges();  
+        };
     </script>
 </body>
 </html>

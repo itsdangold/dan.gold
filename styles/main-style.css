@@ -55,7 +55,7 @@ li:not(:last-child)::after {
 }
 
 span {
-    color: #C39D6F;
+    color: rgb(195, 157, 111);
 }
 
 /* Typography */
@@ -104,9 +104,8 @@ h6 {
 }
 
 p {
-    color: rgb(168, 168, 168);
-    font-weight: 400;
-    font-size: 1.25em;
+    color: rgb(117, 117, 117);
+    font-weight: 300;
     line-height: 1.45em;
 }
 

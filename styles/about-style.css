@@ -84,9 +84,38 @@ p.item--body {
     padding-bottom: .5em;
 }
 
+.contact__email button {
+    outline: none;
+}
+
+.contact__email button::after {
+    content: 'Email copied to the clipboard!';
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    background-color: #51cbcb;
+    color: #fff;
+    padding: .75em 0;
+    font-size: .95em;
+    border-radius: 3px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    opacity: 0;
+    transition: opacity .3s ease-out;
+}
+
+.contact__email button.copy--email-active::after {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+}
+
 .contact__email h3 {
     color: #4F4F4F;
     font-size: 3em;
+    transition: opacity .3s ease;
+}
+
+.contact__email button:hover > h3 {
+    opacity: .5;
 }
 
 .contact__social a {
