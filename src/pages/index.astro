@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import Intro from '../components/Intro.astro';
+import Work from '../components/Work.astro';
 import '../styles/main.scss';
 ---
 
@@ -8,70 +10,7 @@ import '../styles/main.scss';
 	<Nav />
 
 	<main>
-		<section class="intro" id="intro">
-			<p>Hey! I'm</p>
-			<h1>
-				<span class="visually-hidden">Dan Gold</span>
-				<span class="letter" data-letter="d">D</span>
-				<span class="letter" data-letter="a">a</span>
-				<span class="letter" data-letter="n">n</span>
-				<span class="space"></span>
-				<span class="letter" data-letter="g">G</span>
-				<span class="letter" data-letter="o">o</span>
-				<span class="letter" data-letter="l">l</span>
-				<span class="letter" data-letter="d">d</span>
-			</h1>
-			<p>I’m a product designer and front-end developer; focusing on crafting digital products that are beautiful, intuitive, and accessible.</p>
-		</section>
-		<section class="work" id="work">
-			<article class="project">
-				<div class="project-description">
-					<div>
-						<h2>Title</h2>
-						<p>Lorem ipsum testing 123</p>
-					</div>
-				</div>
-				<div class="project-gallery">
-					<div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-					</div>
-				</div>
-			</article>
-			<article class="project">
-				<div class="project-description">
-					<div>
-						<h2>Title</h2>
-						<p>Lorem ipsum testing 123</p>
-					</div>
-				</div>
-				<div class="project-gallery">
-					<div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-					</div>
-				</div>
-			</article>
-			<article class="project">
-				<div class="project-description">
-					<div>
-						<h2>Title</h2>
-						<p>Lorem ipsum testing 123</p>
-					</div>
-				</div>
-				<div class="project-gallery">
-					<div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-						<div class="rectangle"></div>
-					</div>
-				</div>
-			</article>
-		</section>
+		<Intro />
+		<Work />
 	</main>
 </Layout>

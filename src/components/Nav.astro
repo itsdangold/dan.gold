@@ -14,8 +14,6 @@ import Logo from './Logo.astro';
 </header>
 
 <script>
-import { Picture } from "astro:assets";
-
   // Scroll interactions
   const header = document.querySelector('.site-header');
   const logo = document.querySelector('.nav-logo');
@@ -41,11 +39,9 @@ import { Picture } from "astro:assets";
   scale.observe(document.querySelector('#intro'));
 
   let scrollYPos = 0;
-  let mouseXPos = 0;
 
   function updateLettersStyle() {
     letters.style.setProperty("--scrollY-pos", scrollYPos);
-    letters.style.setProperty("--mouseX-pos", mouseXPos);
   }
 
   function handleProjectScroll() {
@@ -66,18 +62,6 @@ import { Picture } from "astro:assets";
   }
 
   window.addEventListener('scroll', handleProjectScroll);
-
-  window.addEventListener('pointermove', ({x}) => {
-    const windowWidth = window.innerWidth;
-
-    if (x <= windowWidth / 2) {
-      mouseXPos = Math.round((windowWidth * -1) + x);
-    } else {
-      mouseXPos = Math.round(x);
-    }
-
-    updateLettersStyle();
-  });
 
   let pos = 0;
 
@@ -114,28 +98,33 @@ import { Picture } from "astro:assets";
     }
   });
 
-  // Add 'active' class to nav links based on section visibility
-  function updateActiveNavLink() {
-    sections.forEach(section => {
-      const sectionId = section.getAttribute('id');
+  // Add 'active' class to nav links based on section visibility using Intersection Observer
+  const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px', // Considers the top 30% of the viewport
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const sectionId = entry.target.getAttribute('id');
       const correspondingLink = document.querySelector(`nav a[href="#${sectionId}"]`);
       
       if (correspondingLink) {
-        const rect = section.getBoundingClientRect();
-        const isHalfVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-
-        if (isHalfVisible) {
+        if (entry.isIntersecting) {
+          // Remove 'active' class from all links
+          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+          // Add 'active' class to the current link
           correspondingLink.classList.add('active');
-        } else {
-          correspondingLink.classList.remove('active');
         }
       }
     });
-  }
+  }, observerOptions);
 
-  window.addEventListener('scroll', updateActiveNavLink);
-
-  updateActiveNavLink();
+  // Observe all sections
+  sections.forEach(section => {
+    observer.observe(section);
+  });
 
   // Copy email to clipboard
   document.querySelectorAll('.copy').forEach(button => {

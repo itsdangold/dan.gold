@@ -1,0 +1,32 @@
+.work {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 0 var(--site-margin);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-content: start;
+
+  &-gallery {
+    background: green;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.project-description {
+  > div {
+    position: sticky;
+    top: 10vh;
+  }
+}
+
+.rectangle {
+  height: 100vh;
+  width: 100%;
+  background: yellow;
+  opacity: .5;
+  margin-top: 10px;
+}

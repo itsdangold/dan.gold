@@ -8,14 +8,14 @@ header {
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: padding 0.15s ease;
-
-  &.scrolled {
-    background-color: var(--black);
-  }
+  transition: all 0.15s ease;
 
   &.project-visible {
     background-color: var(--white);
+  }
+
+  ::selection {
+    background-color: var(--yellow);
   }
 }
 
@@ -43,11 +43,18 @@ nav {
       position: absolute;
       top: 0;
       left: 50%;
-      transform: translate(-50%, -50%);
+      opacity: 0;
+      transform: translate(-50%, 0);
+      transition: all .3s ease;
     }
 
     &.active, &:hover, &:focus {
       opacity: 1;
+    }
+
+    &.active::after {
+      opacity: 1;
+      transform: translate(-50%, -50%);
     }
   }
 }
@@ -64,16 +71,61 @@ nav {
     color: var(--black);
   }
   
+  @keyframes logo {
+    0% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 0;
+      opacity: 0.4;
+    }
+
+    50% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      opacity: 0.75;
+    }
+
+    51% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 600;
+      opacity: 0;
+    }
+
+
+    52% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: -600;
+      opacity: 0;
+    }
+
+    53% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: -600;
+      opacity: 0.75;
+    }
+
+    100% {
+      stroke-dasharray: 600;
+      stroke-dashoffset: 0;
+      opacity: .4;
+    }
+  }
+
   &__inner {
     color: inherit;
     stroke: currentColor;
     stroke-width: 2px;
     width: 2.5rem;
-    opacity: 0.35;
+    opacity: 0.4;
     transition: transform 0.15s ease;
 
     .project-visible & {
       opacity: .75;
+    }
+  }
+
+  &:hover {
+    .nav-logo__inner {
+      animation: logo 1.25s ease forwards;
     }
   }
 
