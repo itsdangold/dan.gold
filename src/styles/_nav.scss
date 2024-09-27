@@ -1,0 +1,132 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--site-margin);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: padding 0.15s ease;
+
+  &.scrolled {
+    background-color: var(--black);
+  }
+
+  &.project-visible {
+    background-color: var(--white);
+  }
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  color: var(--white);
+
+  .project-visible & {
+    color: var(--black);
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.5;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 4px;
+      background-color: var(--yellow);
+      border-radius: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &.active, &:hover, &:focus {
+      opacity: 1;
+    }
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  transition: all 0.15s ease;
+  transform-origin: top left;
+  transform: scale(1.75);
+  color: var(--white);
+
+  .project-visible & {
+    color: var(--black);
+  }
+  
+  &__inner {
+    color: inherit;
+    stroke: currentColor;
+    stroke-width: 2px;
+    width: 2.5rem;
+    opacity: 0.35;
+    transition: transform 0.15s ease;
+
+    .project-visible & {
+      opacity: .75;
+    }
+  }
+
+  &.scrolled {
+    transform: scale(1);
+  }
+}
+
+.copy {
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20%;
+    background-color: var(--yellow);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.15s ease;
+  }
+
+  &:hover::before {
+    transform: scaleY(1);
+  }
+
+  &::after {
+    content: 'Copy to clipboard';
+
+    font-size: 0.75rem;
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+    width: max-content;
+    pointer-events: none;
+    transition: all 0.15s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  &.active {
+    &::after {
+      content: 'Copied!';
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+}

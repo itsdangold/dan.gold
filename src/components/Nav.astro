@@ -1,0 +1,160 @@
+---
+import Logo from './Logo.astro';
+---
+
+<header class="site-header">
+  <Logo />
+
+  <nav>
+    <a href="#intro">Intro</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <button class="copy">hello@dan.gold</button>
+  </nav>
+</header>
+
+<script>
+import { Picture } from "astro:assets";
+
+  // Scroll interactions
+  const header = document.querySelector('.site-header');
+  const logo = document.querySelector('.nav-logo');
+  const sections = [...document.querySelectorAll('section')];
+  const letters = document.querySelector('.intro h1');
+  const lettersInner = document.querySelectorAll('.letter');
+
+  const scale = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        header.classList.remove('scrolled');
+        logo.classList.remove('scrolled');
+      } else {
+        header.classList.add('scrolled');
+        logo.classList.add('scrolled');
+      }
+    });
+  }, {
+    rootMargin: '-400px 0px 0px 0px',
+    threshold: .5
+  });
+
+  scale.observe(document.querySelector('#intro'));
+
+  let scrollYPos = 0;
+  let mouseXPos = 0;
+
+  function updateLettersStyle() {
+    letters.style.setProperty("--scrollY-pos", scrollYPos);
+    letters.style.setProperty("--mouseX-pos", mouseXPos);
+  }
+
+  function handleProjectScroll() {
+    const headerHeight = header.getBoundingClientRect().height;
+    const projectSection = document.querySelector('.project');
+
+    scrollYPos = Math.round(window.scrollY);
+    updateLettersStyle();
+
+    if (projectSection) {
+      const projectRect = projectSection.getBoundingClientRect();
+      if (projectRect.top <= headerHeight) {
+        header.classList.add('project-visible');
+      } else {
+        header.classList.remove('project-visible');
+      }
+    } 
+  }
+
+  window.addEventListener('scroll', handleProjectScroll);
+
+  window.addEventListener('pointermove', ({x}) => {
+    const windowWidth = window.innerWidth;
+
+    if (x <= windowWidth / 2) {
+      mouseXPos = Math.round((windowWidth * -1) + x);
+    } else {
+      mouseXPos = Math.round(x);
+    }
+
+    updateLettersStyle();
+  });
+
+  let pos = 0;
+
+  document.addEventListener('keyup', (e) => {
+    const key = e.key.toUpperCase();
+    
+    lettersInner.forEach((letter, index) => {
+      letter.classList.remove('active');
+      
+      if (letter.getAttribute('data-letter').toUpperCase() == key) {
+        letter.classList.add('active');
+
+        let timeoutId;
+
+        // Clear existing timeout if it's running
+        if (timeoutId) {
+          clearTimeout(timeoutId);
+        }
+
+        // Set new timeout
+        timeoutId = setTimeout(() => {
+          letter.classList.remove('active');
+          timeoutId = null;
+        }, 200);
+        
+        if (key == 'D' && index !== pos) {
+          letter.classList.remove('active');                      
+        }
+      }
+    });
+
+    if (key == 'D') {
+      pos == 0 ? pos = lettersInner.length - 1 : pos = 0;
+    }
+  });
+
+  // Add 'active' class to nav links based on section visibility
+  function updateActiveNavLink() {
+    sections.forEach(section => {
+      const sectionId = section.getAttribute('id');
+      const correspondingLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+      
+      if (correspondingLink) {
+        const rect = section.getBoundingClientRect();
+        const isHalfVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+
+        if (isHalfVisible) {
+          correspondingLink.classList.add('active');
+        } else {
+          correspondingLink.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNavLink);
+
+  updateActiveNavLink();
+
+  // Copy email to clipboard
+  document.querySelectorAll('.copy').forEach(button => {
+    let timeoutId;
+
+    button.addEventListener('click', () => {
+      navigator.clipboard.writeText(button.textContent);
+      button.classList.add('active');
+
+      // Clear existing timeout if it's running
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+
+      // Set new timeout
+      timeoutId = setTimeout(() => {
+        button.classList.remove('active');
+        timeoutId = null;
+      }, 3000);
+    });
+  });
+</script>

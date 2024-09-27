@@ -1,0 +1,57 @@
+.intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+}
+
+h1 {
+  font-size: 16.5vw;
+  display: flex;
+  flex-wrap: nowrap;
+  text-transform: uppercase;
+  font-weight: 900;
+  overflow: hidden;
+  cursor: pointer;
+  --scrollY-pos: 0;
+  --mouseX-pos: 0;
+  --layer-1-y: calc((var(--scrollY-pos) * .0125px) + .025em);
+  --layer-2-y: calc((var(--scrollY-pos) * .025px) + .05em);
+  --layer-3-y: calc((var(--scrollY-pos) * .05px) + .075em);
+
+  --layer-1-x: 0;
+  --layer-2-x: 0;
+  --layer-3-x: 0;
+}
+
+.letter {
+  text-shadow: var(--layer-1-x) 0 var(--layer-1-y) rgba(0, 0, 0, 0.25),
+  var(--layer-1-x) var(--layer-1-y) 0px var(--yellow),
+  var(--layer-2-x) 0 var(--layer-2-y) rgba(0, 0, 0, 0.25),
+  var(--layer-2-x) var(--layer-2-y) 0px var(--red),
+  var(--layer-3-x) 0 var(--layer-3-y) rgba(0, 0, 0, 0.25),
+  var(--layer-3-x) var(--layer-3-y) 0px var(--purple);
+  transition: color .1s ease-out, transform .1s ease-out, text-shadow .1s ease-out;
+  display: block;
+  margin: 0;
+  will-change: transform;
+
+  &:hover, &.active {
+    transform: translateY(var(--layer-3-y));
+    text-shadow: none;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: -.45em;
+  }
+}
+
+.space {
+  padding: 2vw;
+}

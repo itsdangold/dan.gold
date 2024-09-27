@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-NarrowMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-NarrowBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Obviously';
+  src: url('/fonts/Obviously-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Obviously', sans-serif;
+}
+
