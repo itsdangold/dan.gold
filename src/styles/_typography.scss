@@ -1,45 +1,44 @@
 @font-face {
-  font-family: 'Obviously';
-  src: url('/fonts/Obviously-NarrowMedium.otf') format('opentype');
+  font-family: 'Degular';
+  src: url('/fonts/DegularDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Obviously';
-  src: url('/fonts/Obviously-NarrowBold.otf') format('opentype');
+  font-family: 'Right Grotesk Mono';
+  src: url('/fonts/PPRightGroteskMono-Bold.otf') format('opentype');
   font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('/fonts/Obviously-NarrowBlack.otf') format('opentype');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Obviously';
-  src: url('/fonts/Obviously-Black.otf') format('opentype');
-  font-weight: 900;
   font-style: normal;
 }
 
 body {
-  font-family: 'Obviously', sans-serif;
+  font-family: 'Neue Montreal', sans-serif;
   color: var(--black);
+}
+
+h1, h2, h3 {
+  font-family: 'Degular', sans-serif;
+  line-height: 100%;
+  letter-spacing: -.01em;
+}
+
+h4 {
+  font-family: 'Right Grotesk Mono';
 }
 
 h2 {
   font-size: clamp(3rem, 5vw, 5rem);
-  font-weight: 800;
-  letter-spacing: -.01em;
-  line-height: 100%;
 }
 
 h4 {
-  font-weight: 700;
   text-transform: uppercase;
 }
 
