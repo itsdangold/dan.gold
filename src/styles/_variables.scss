@@ -1,10 +1,31 @@
 html {
   --site-margin: 1.75rem;
+
   --white: #fff;
   --grey: hsla(0, 0%, 100%, 0.1);
   --black: hsl(0, 0%, 9%);
-  --yellow: #FFB800;
-  --red: #FF0000;
-  --purple: #BD00FF;
-  --blue: #2ED9FF;
+  
+  --mint-background: #E8F3ED;
+  --mint-text: #3D4B54;
+  --mint-shadow-1: #748085;
+  --mint-shadow-2: #ABB6B6;
+  --mint-shadow-3: #C6D1CE;
+  
+  --gold-background: #FFB800;
+  --gold-text: var(--white);
+  --gold-shadow-1: #B98809;
+  --gold-shadow-2: #CE970A;
+  --gold-shadow-3: #E5A80B;
+
+  --blue-background: #0046FB;
+  --blue-text: var(--white);
+  --blue-shadow-1: #ADC4FE;
+  --blue-shadow-2: #5C89FD;
+  --blue-shadow-3: #336BFC;
+  
+  --green-background: #081F13;
+  --green-text: #14FC00;
+  --green-shadow-1: #30992C;
+  --green-shadow-2: #277029;
+  --green-shadow-3: #194C1F;
 }
