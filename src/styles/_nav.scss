@@ -10,10 +10,6 @@ header {
   z-index: 1000;
   transition: all 0.15s ease;
 
-  &.project-visible {
-    background-color: var(--white);
-  }
-
   ::selection {
     background-color: var(--yellow);
   }
