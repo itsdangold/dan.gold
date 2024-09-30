@@ -75,38 +75,32 @@ nav {
     0% {
       stroke-dasharray: 600;
       stroke-dashoffset: 0;
-      opacity: 0.4;
     }
 
     50% {
       stroke-dasharray: 600;
       stroke-dashoffset: 600;
-      opacity: 0.75;
     }
 
     51% {
       stroke-dasharray: 600;
       stroke-dashoffset: 600;
-      opacity: 0;
     }
 
 
     52% {
       stroke-dasharray: 600;
       stroke-dashoffset: -600;
-      opacity: 0;
     }
 
     53% {
       stroke-dasharray: 600;
       stroke-dashoffset: -600;
-      opacity: 0.75;
     }
 
     100% {
       stroke-dasharray: 600;
       stroke-dashoffset: 0;
-      opacity: .4;
     }
   }
 
@@ -117,6 +111,9 @@ nav {
     width: 2.5rem;
     opacity: 0.4;
     transition: transform 0.15s ease;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 0;
+    will-change: stroke-dashoffset;
 
     .project-visible & {
       opacity: .75;
@@ -125,7 +122,7 @@ nav {
 
   &:hover {
     .nav-logo__inner {
-      animation: logo 1.25s ease forwards;
+      animation: logo 2.5s ease forwards;
     }
   }
 

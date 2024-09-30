@@ -14,6 +14,13 @@
 
 @font-face {
   font-family: 'Obviously';
+  src: url('/fonts/Obviously-NarrowBlack.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Obviously';
   src: url('/fonts/Obviously-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
@@ -21,4 +28,21 @@
 
 body {
   font-family: 'Obviously', sans-serif;
+  color: var(--black);
+}
+
+h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: 100%;
+}
+
+h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 150%;
 }

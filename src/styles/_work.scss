@@ -2,24 +2,43 @@
   background-color: var(--white);
   color: var(--black);
   padding: 0 var(--site-margin);
+
+  ::selection {
+    background-color: var(--yellow);
+  }
 }
 
 .project {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr;
   align-content: start;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  &-description {
+    padding: 4rem 0;
+    
+    @media (min-width: 800px) {
+      padding-right: var(--site-margin);
+    }
+
+    &__text {
+      position: sticky;
+      top: calc(15vh + 5rem);
+      max-width: 65ch;
+    }
+  }
 
   &-gallery {
     background: green;
     display: flex;
     flex-direction: column;
   }
-}
 
-.project-description {
-  > div {
-    position: sticky;
-    top: 10vh;
+  p {
+    margin-top: 2rem;
   }
 }
 
