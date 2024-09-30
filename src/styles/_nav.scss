@@ -64,44 +64,10 @@ nav {
   align-items: center;
   transition: all 0.15s ease;
   transform-origin: top left;
-  transform: scale(1.75);
   color: var(--white);
 
   .project-visible & {
     color: var(--black);
-  }
-  
-  @keyframes logo {
-    0% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 0;
-    }
-
-    50% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-    }
-
-    51% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
-    }
-
-
-    52% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: -600;
-    }
-
-    53% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: -600;
-    }
-
-    100% {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 0;
-    }
   }
 
   &__inner {
@@ -111,9 +77,6 @@ nav {
     width: 2.5rem;
     opacity: 0.4;
     transition: transform 0.15s ease;
-    stroke-dasharray: 600;
-    stroke-dashoffset: 0;
-    will-change: stroke-dashoffset;
 
     .project-visible & {
       opacity: .75;
@@ -121,13 +84,6 @@ nav {
   }
 
   &:hover {
-    .nav-logo__inner {
-      animation: logo 2.5s ease forwards;
-    }
-  }
-
-  &.scrolled {
-    transform: scale(1);
   }
 }
 

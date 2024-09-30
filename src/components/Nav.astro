@@ -21,22 +21,23 @@ import Logo from './Logo.astro';
   const letters = document.querySelector('.intro h1');
   const lettersInner = document.querySelectorAll('.letter');
 
-  const scale = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        header.classList.remove('scrolled');
-        logo.classList.remove('scrolled');
-      } else {
-        header.classList.add('scrolled');
-        logo.classList.add('scrolled');
-      }
-    });
-  }, {
-    rootMargin: '-400px 0px 0px 0px',
-    threshold: .5
-  });
+  // Scale nav on small scroll
+  // const scale = new IntersectionObserver((entries) => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       header.classList.remove('scrolled');
+  //       logo.classList.remove('scrolled');
+  //     } else {
+  //       header.classList.add('scrolled');
+  //       logo.classList.add('scrolled');
+  //     }
+  //   });
+  // }, {
+  //   rootMargin: '-400px 0px 0px 0px',
+  //   threshold: .5
+  // });
 
-  scale.observe(document.querySelector('#intro'));
+  // scale.observe(document.querySelector('#intro'));
 
   let scrollYPos = 0;
 
@@ -62,6 +63,8 @@ import Logo from './Logo.astro';
   }
 
   window.addEventListener('scroll', handleProjectScroll);
+
+  // Keypresses to activate letters
 
   let pos = 0;
 
@@ -101,7 +104,7 @@ import Logo from './Logo.astro';
   // Add 'active' class to nav links based on section visibility using Intersection Observer
   const observerOptions = {
     root: null,
-    rootMargin: '-50% 0px -50% 0px', // Considers the top 30% of the viewport
+    rootMargin: '-50% 0px -50% 0px',
     threshold: 0
   };
 
