@@ -1,7 +1,8 @@
 .work {
   background-color: var(--white);
   color: var(--black);
-  padding: 0 var(--site-margin);
+  margin: 0 calc(var(--site-margin) / 2);
+  border-radius: 1rem;
 
   ::selection {
     background-color: var(--yellow);
@@ -9,20 +10,13 @@
 }
 
 .project {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-content: start;
-
-  @media (min-width: 800px) {
-    grid-template-columns: 1fr 2fr;
-  }
+  display: flex;
+  flex-wrap: wrap;
 
   &-description {
-    padding: 4rem 0;
-    
-    @media (min-width: 800px) {
-      padding-right: var(--site-margin);
-    }
+    padding: 4rem var(--site-margin);
+    flex-basis: 30rem;
+    flex-grow: 2;
 
     &__text {
       position: sticky;
@@ -32,6 +26,9 @@
   }
 
   &-gallery {
+    flex-basis: 0;
+    flex-grow: 3;
+    min-width: 60%;
     background: green;
     display: flex;
     flex-direction: column;
