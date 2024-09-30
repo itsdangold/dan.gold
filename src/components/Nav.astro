@@ -16,28 +16,22 @@ import Logo from './Logo.astro';
 <script>
   // Scroll interactions
   const header = document.querySelector('.site-header');
-  // const logo = document.querySelector('.nav-logo');
+  const logo = document.querySelector('.nav-logo');
   const sections = [...document.querySelectorAll('section')];
   const letters = document.querySelector('.intro h1');
   const lettersInner = document.querySelectorAll('.letter');
+  
+  const themeContainer = document.querySelector('[data-theme]');
+  const themes = ["rain", "blueprint", "gold", "hackerman"];
+  let i = 1;
 
-  // Scale nav on small scroll
-  // const scale = new IntersectionObserver((entries) => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting) {
-  //       header.classList.remove('scrolled');
-  //       logo.classList.remove('scrolled');
-  //     } else {
-  //       header.classList.add('scrolled');
-  //       logo.classList.add('scrolled');
-  //     }
-  //   });
-  // }, {
-  //   rootMargin: '-400px 0px 0px 0px',
-  //   threshold: .5
-  // });
-
-  // scale.observe(document.querySelector('#intro'));
+  logo.addEventListener('click', () => {
+    if (i == themes.length) {
+      i = 0;
+    }
+    themeContainer.setAttribute("data-theme", themes[i]);
+    i++;
+  })
 
   let scrollYPos = 0;
 
