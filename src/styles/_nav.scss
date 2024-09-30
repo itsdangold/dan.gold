@@ -9,6 +9,7 @@ header {
   right: 0;
   z-index: 1000;
   transition: all 0.15s ease;
+  color: var(--text);
 
   ::selection {
     background-color: var(--yellow);
@@ -18,7 +19,6 @@ header {
 nav {
   display: flex;
   gap: 1rem;
-  color: var(--white);
 
   .project-visible & {
     color: var(--black);
@@ -34,7 +34,7 @@ nav {
       display: block;
       width: 4px;
       height: 4px;
-      background-color: var(--yellow);
+      background-color: var(--text);
       border-radius: 100%;
       position: absolute;
       top: 0;
@@ -50,7 +50,7 @@ nav {
 
     &.active::after {
       opacity: 1;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -75%);
     }
   }
 }
@@ -59,27 +59,18 @@ nav {
   display: flex;
   align-items: center;
   transition: all 0.15s ease;
-  transform-origin: top left;
-  color: var(--white);
-
-  .project-visible & {
-    color: var(--black);
-  }
+  opacity: 0.6;
+  color: inherit;
 
   &__inner {
     color: inherit;
     stroke: currentColor;
-    stroke-width: 2px;
+    stroke-width: 2.5px;
     width: 2.5rem;
-    opacity: 0.4;
-    transition: transform 0.15s ease;
-
-    .project-visible & {
-      opacity: .75;
-    }
   }
 
   &:hover {
+    opacity: .4;
   }
 }
 
@@ -88,8 +79,8 @@ nav {
     content: '';
     display: block;
     width: 100%;
-    height: 20%;
-    background-color: var(--yellow);
+    height: 25%;
+    background-color: var(--shadow-2);
     position: absolute;
     bottom: 0;
     left: 0;

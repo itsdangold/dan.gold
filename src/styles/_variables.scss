@@ -1,31 +1,82 @@
-html {
+:root {
   --site-margin: 1.75rem;
 
   --white: #fff;
-  --grey: hsla(0, 0%, 100%, 0.1);
+  --grey: hsla(0, 0%, 0%, 0.05);
   --black: hsl(0, 0%, 9%);
   
-  --mint-background: #E8F3ED;
+  --mint-bg: #E8F3ED;
   --mint-text: #3D4B54;
+  --mint-text-pressed: rgba(61, 75, 84, .9);
+  --mint-text-shadow: 0px 8px 8px var(--bg), 0 0 0 #3D4B54, 0px 8px 8px var(--bg);
   --mint-shadow-1: #748085;
   --mint-shadow-2: #ABB6B6;
   --mint-shadow-3: #C6D1CE;
   
-  --gold-background: #FFB800;
+  --gold-bg: #FFB800;
   --gold-text: var(--white);
+  --gold-text-pressed: var(--white);
+  --gold-text-shadow: 0px 8px rgb(159, 118, 13);
   --gold-shadow-1: #B98809;
   --gold-shadow-2: #CE970A;
   --gold-shadow-3: #E5A80B;
 
-  --blue-background: #0046FB;
+  --blue-bg: #0046FB;
   --blue-text: var(--white);
-  --blue-shadow-1: #ADC4FE;
-  --blue-shadow-2: #5C89FD;
-  --blue-shadow-3: #336BFC;
+  --blue-text-pressed: var(--white);
+  --blue-text-shadow: 0px 8px #002fa5;
+  --blue-shadow-1: #0037c3;
+  --blue-shadow-2: #003DD7;
+  --blue-shadow-3: #0041E7;
   
-  --green-background: #081F13;
+  --green-bg: #081F13;
   --green-text: #14FC00;
+  --green-text-pressed: #14FC00;
+  --green-text-shadow: 0 0 8px var(--text), 0px 12px #030c04;
   --green-shadow-1: #30992C;
   --green-shadow-2: #277029;
   --green-shadow-3: #194C1F;
+
+  --glow: 0 2px 4px transparent;
+}
+
+[data-theme="rain"] {
+  --bg: var(--mint-bg);
+  --text: var(--mint-text);
+  --text-pressed: var(--mint-text-pressed);
+  --text-shadow: var(--mint-text-shadow);
+  --shadow-1: var(--mint-shadow-1);
+  --shadow-2: var(--mint-shadow-2);
+  --shadow-3: var(--mint-shadow-3);
+}
+
+[data-theme="gold"] {
+  --bg: var(--gold-bg);
+  --text: var(--gold-text);
+  --text-pressed: var(--gold-text-pressed);
+  --text-shadow: var(--gold-text-shadow);
+  --shadow-1: var(--gold-shadow-1);
+  --shadow-2: var(--gold-shadow-2);
+  --shadow-3: var(--gold-shadow-3);
+}
+
+[data-theme="blueprint"] {
+  --bg: var(--blue-bg);
+  --text: var(--blue-text);
+  --text-pressed: var(--blue-text-pressed);
+  --text-shadow: var(--blue-text-shadow);
+  --shadow-1: var(--blue-shadow-1);
+  --shadow-2: var(--blue-shadow-2);
+  --shadow-3: var(--blue-shadow-3);
+}
+
+[data-theme="hackerman"] {
+  --bg: var(--green-bg);
+  --text: var(--green-text);
+  --text-pressed: var(--green-text-pressed);
+  --text-shadow: var(--green-text-shadow);
+  --shadow-1: var(--green-shadow-1);
+  --shadow-2: var(--green-shadow-2);
+  --shadow-3: var(--green-shadow-3);
+  --glow: 0 0 8px var(--text);
 }
