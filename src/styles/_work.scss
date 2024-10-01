@@ -78,26 +78,28 @@
 
     &::-webkit-slider-thumb {
       appearance: none;
-      width: 6px;
+      width: 5px;
       border-radius: 1rem;
       position: absolute;
       top: -.75rem;
       bottom: -.75rem;
       left: var(--slider-pos);
       transform: translateX(-50%);
-      background: linear-gradient(0deg, red, purple)
+      background: linear-gradient(0deg, red, purple);
+      box-shadow: 0 0 8px rgba(0,0,0,.3);
     }
 
     &::-moz-range-thumb {
       appearance: none;
-      width: 6px;
+      width: 5px;
       border-radius: 1rem;
       position: absolute;
       top: -.75rem;
       bottom: -.75rem;
       left: var(--slider-pos);
       transform: translateX(-50%);
-      background: linear-gradient(0deg, red, purple)
+      background: linear-gradient(0deg, red, purple);
+      box-shadow: 0 0 8px rgba(0,0,0,.3);
     }
   }
 }

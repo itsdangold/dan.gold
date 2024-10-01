@@ -10,6 +10,43 @@ import EA from './projects/EA.astro';
 <script>
   const comparison = document.querySelector('.comparison');
   const slider = document.querySelector('.comparison__slider');
-  comparison.style.setProperty('--slider-pos', slider.value + '%');
-  slider.oninput = () => comparison.style.setProperty('--slider-pos', slider.value + '%');
+
+  function updateSlider () {
+    comparison.style.setProperty('--slider-pos', slider.value + '%');
+  }
+
+  updateSlider();
+
+  slider.oninput = () => updateSlider();
+  if (slider && comparison) {
+    let originalValue = slider.value;
+    let isHovering = false;
+
+    comparison.addEventListener('mouseenter', () => {
+      isHovering = true;
+    });
+    
+    comparison.addEventListener('mouseleave', () => {
+      isHovering = false;
+      slider.value = originalValue;
+    });
+
+    comparison.addEventListener('mousemove', (e) => {
+      if (isHovering) {
+        const rect = comparison.getBoundingClientRect();
+        
+        const x = e.clientX - rect.left;
+        const width = rect.width;
+        const percentage = (x / width) * 100;
+        slider.value = percentage;
+        updateSlider();
+      }
+    });
+
+    slider.addEventListener('change', () => {
+      if (!isHovering) {
+        originalValue = slider.value;
+      }
+    });
+  }
 </script>
