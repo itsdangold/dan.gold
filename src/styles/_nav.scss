@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem var(--site-margin);
+  padding: .25rem var(--site-margin);
   position: fixed;
   top: 0;
   left: 0;
@@ -17,7 +17,7 @@ header {
 
   &.project-visible {
     background-color: var(--bg);
-    padding: .25rem var(--site-margin);
+    // padding: .25rem var(--site-margin);
   }
 }
 
@@ -62,6 +62,7 @@ nav {
   opacity: 0.6;
   color: inherit;
   transform-origin: left center;
+  transform: scale(.8);
   
   .project-visible & {
     transform: scale(.8);

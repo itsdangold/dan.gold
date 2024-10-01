@@ -4,12 +4,14 @@
   margin: 0 calc(var(--site-margin) / 2);
   border-radius: 1rem;
   z-index: 4;
+
+  // scroll-margin: 5rem;
 }
 
 .project {
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem var(--site-margin);
+  padding: var(--site-margin);
   gap: var(--site-margin);
 
   &-description {
