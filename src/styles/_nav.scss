@@ -10,10 +10,6 @@ header {
   z-index: 1000;
   color: var(--text);
 
-  ::selection {
-    background-color: var(--yellow);
-  }
-
   &.project-visible {
     background-color: var(--bg);
   }
