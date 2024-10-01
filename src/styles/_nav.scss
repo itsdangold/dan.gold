@@ -9,6 +9,7 @@ header {
   right: 0;
   z-index: 1000;
   color: var(--text);
+  transition: padding .1s ease;
 
   ::selection {
     background-color: var(--yellow);
@@ -16,6 +17,7 @@ header {
 
   &.project-visible {
     background-color: var(--bg);
+    padding: .25rem var(--site-margin);
   }
 }
 
@@ -34,7 +36,6 @@ nav {
       width: 4px;
       height: 4px;
       background-color: var(--text);
-      border-radius: 100%;
       position: absolute;
       top: 0;
       left: 50%;
@@ -57,9 +58,14 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, transform .15s ease;
   opacity: 0.6;
   color: inherit;
+  transform-origin: left center;
+  
+  .project-visible & {
+    transform: scale(.8);
+  }
 
   &__inner {
     color: inherit;

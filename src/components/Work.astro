@@ -5,3 +5,10 @@ import EA from './projects/EA.astro';
 <section class="work" id="work">
   <EA />
 </section>
+
+<script>
+  const comparison = document.querySelector('.comparison');
+  const slider = document.querySelector('.comparison__slider');
+  comparison.style.setProperty('--slider-pos', slider.value + '%');
+  slider.oninput = () => comparison.style.setProperty('--slider-pos', slider.value + '%');
+</script>

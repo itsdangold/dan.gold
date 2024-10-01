@@ -12,6 +12,7 @@
   --mint-shadow-1: #748085;
   --mint-shadow-2: #ABB6B6;
   --mint-shadow-3: #C6D1CE;
+  --mint-selection: rgba(198, 209, 206, 0.5);
   
   --gold-bg: #FFB800;
   --gold-text: var(--white);
@@ -20,6 +21,7 @@
   --gold-shadow-1: #B98809;
   --gold-shadow-2: #CE970A;
   --gold-shadow-3: #E5A80B;
+  --gold-selection: #E5A80B;
 
   --blue-bg: #0046FB;
   --blue-text: var(--white);
@@ -28,6 +30,7 @@
   --blue-shadow-1: #0037c3;
   --blue-shadow-2: #003DD7;
   --blue-shadow-3: #0041E7;
+  --blue-selection: #0041E7;
   
   --green-bg: #081F13;
   --green-text: #14FC00;
@@ -36,6 +39,7 @@
   --green-shadow-1: #30992C;
   --green-shadow-2: #277029;
   --green-shadow-3: #194C1F;
+  --green-selection: #194C1F;
 
   --glow: 0 2px 4px transparent;
 }
@@ -48,6 +52,7 @@
   --shadow-1: var(--mint-shadow-1);
   --shadow-2: var(--mint-shadow-2);
   --shadow-3: var(--mint-shadow-3);
+  --selection: var(--mint-selection);
 }
 
 [data-theme="gold"] {
@@ -58,6 +63,7 @@
   --shadow-1: var(--gold-shadow-1);
   --shadow-2: var(--gold-shadow-2);
   --shadow-3: var(--gold-shadow-3);
+  --selection: var(--gold-selection);
 }
 
 [data-theme="blueprint"] {
@@ -68,9 +74,10 @@
   --shadow-1: var(--blue-shadow-1);
   --shadow-2: var(--blue-shadow-2);
   --shadow-3: var(--blue-shadow-3);
+  --selection: var(--blue-selection);
 }
 
-[data-theme="hackerman"] {
+[data-theme="neo"] {
   --bg: var(--green-bg);
   --text: var(--green-text);
   --text-pressed: var(--green-text-pressed);
@@ -79,4 +86,5 @@
   --shadow-2: var(--green-shadow-2);
   --shadow-3: var(--green-shadow-3);
   --glow: 0 0 8px var(--text);
+  --selection: var(--green-selection);
 }

@@ -3,15 +3,44 @@
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  padding: 10rem var(--site-margin);
+  padding: 8rem var(--site-margin);
   color: var(--white);
-  
-  ::selection {
-    background-color: rgb(50, 50, 50);
+  z-index: 2;
+  background-color: var(--bg);
+
+  &::before {
+    --site-margin-double: (100% - (var(--site-margin) * 2));
+    content: '';
+    pointer-events: none;
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+
+    // Formula for the column spacing: ((100% - (leftMargin + rightMargin)) * columnPercent) + leftMargin
+    background: linear-gradient(90deg, var(--bg) 0,
+    transparent var(--site-margin),
+    var(--grey) calc(var(--site-margin) + 1px),
+    transparent calc(var(--site-margin) + 2px),
+    transparent calc((var(--site-margin-double) * .2) + var(--site-margin)),
+    var(--grey) calc((var(--site-margin-double) * .2) + 1px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .2) + 2px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .4) + var(--site-margin)),
+    var(--grey) calc((var(--site-margin-double) * .4) + 1px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .4) + 2px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .6) + var(--site-margin)),
+    var(--grey) calc((var(--site-margin-double) * .6) + 1px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .6) + 2px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .8) + var(--site-margin)),
+    var(--grey) calc((var(--site-margin-double) * .8) + 1px + var(--site-margin)),
+    transparent calc((var(--site-margin-double) * .8) + 2px + var(--site-margin)),
+    transparent calc(100% - var(--site-margin)),
+    var(--grey) calc(100% - var(--site-margin) + 1px),
+    transparent calc(100% - var(--site-margin) + 2px),
+    transparent 100%);
   }
 
   &::after {
-    [data-theme="hackerman"] & {
+    [data-theme="neo"] & {
       content: '';
       position: absolute;
       pointer-events: none;
@@ -40,30 +69,6 @@
       }
     }
   }
-
-  --site-margin-double: (100% - (var(--site-margin) * 2));
-  
-  // Formula for the column spacing: ((100% - (leftMargin + rightMargin)) * columnPercent) + leftMargin
-    background: linear-gradient(90deg, var(--bg) 0,
-  var(--bg) var(--site-margin),
-  var(--grey) calc(var(--site-margin) + 1px),
-  var(--bg) calc(var(--site-margin) + 2px),
-  var(--bg) calc((var(--site-margin-double) * .2) + var(--site-margin)),
-  var(--grey) calc((var(--site-margin-double) * .2) + 1px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .2) + 2px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .4) + var(--site-margin)),
-  var(--grey) calc((var(--site-margin-double) * .4) + 1px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .4) + 2px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .6) + var(--site-margin)),
-  var(--grey) calc((var(--site-margin-double) * .6) + 1px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .6) + 2px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .8) + var(--site-margin)),
-  var(--grey) calc((var(--site-margin-double) * .8) + 1px + var(--site-margin)),
-  var(--bg) calc((var(--site-margin-double) * .8) + 2px + var(--site-margin)),
-  var(--bg) calc(100% - var(--site-margin)),
-  var(--grey) calc(100% - var(--site-margin) + 1px),
-  var(--bg) calc(100% - var(--site-margin) + 2px),
-  var(--bg) 100%);
 }
 
 h1 {
@@ -74,9 +79,7 @@ h1 {
   flex-wrap: nowrap;
   text-transform: uppercase;
   font-weight: 900;
-  overflow: hidden;
-  padding-top: .4em;
-  padding-bottom: .5em;
+  padding-top: .2em;
   transform: translateX(-.5vw);
 
   color: var(--text);
@@ -102,6 +105,7 @@ h1 {
   will-change: transform, text-shadow;
   line-height: 100%;
   cursor: pointer;
+  user-select: none;
 
   &:hover, &.active {
     transform: translateY(calc(var(--layer-3-y)/3)) scale(.995);
@@ -114,7 +118,7 @@ h1 {
     display: block;
     height: 0;
     width: 0;
-    margin-top: -.4em;
+    margin-top: -.45em;
   }
 
   &:nth-child(1 of .letter) {
