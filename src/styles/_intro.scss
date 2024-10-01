@@ -86,9 +86,9 @@ h1 {
 
   --scrollY-pos: 0;
   --mouseX-pos: 0;
-  --layer-1-y: calc((var(--scrollY-pos) * .04px) + .025em);
-  --layer-2-y: calc((var(--scrollY-pos) * .08px) + .0625em);
-  --layer-3-y: calc((var(--scrollY-pos) * .12px) + .1em);
+  --layer-1-y: calc((var(--scrollY-pos) * .05px) + .025em);
+  --layer-2-y: calc((var(--scrollY-pos) * .1px) + .0625em);
+  --layer-3-y: calc((var(--scrollY-pos) * .15px) + .1em);
 
   --layer-1-x: 0;
   --layer-2-x: 0;

@@ -14,13 +14,15 @@ import Logo from './Logo.astro';
 </header>
 
 <script>
-  // Scroll interactions
   const header = document.querySelector('.site-header');
   const logo = document.querySelector('.nav-logo');
   const sections = [...document.querySelectorAll('section')];
   const letters = document.querySelector('.intro h1');
   const lettersInner = document.querySelectorAll('.letter');
   
+  // ############################
+  // Theme switcher
+  // ############################
   const themeContainer = document.querySelector('[data-theme]');
   const themes = ["rain", "blueprint", "gold", "neo"];
   let i = 1;
@@ -33,33 +35,71 @@ import Logo from './Logo.astro';
     i++;
   })
 
+  // ############################
+  // Shadow position
+  // ############################
   let scrollYPos = 0;
 
-  function updateLettersStyle() {
+  function shadowPosition() {
+    scrollYPos = Math.round(window.scrollY);
     letters.style.setProperty("--scrollY-pos", scrollYPos);
   }
 
-  function handleProjectScroll() {
-    const headerHeight = header.getBoundingClientRect().height;
-    const projectSection = document.querySelector('.project');
+  const scrollShadow = new IntersectionObserver((entries) => {
+    shadowPosition();
+    window.addEventListener('scroll', shadowPosition);
+    if (!entries[0].isIntersecting) {
+      window.removeEventListener('scroll', shadowPosition);
+    }
+  }, {});
+  
+  scrollShadow.observe(document.querySelector('.intro'));
+  
+  // ############################
+  // Add nav background on scroll
+  // ############################
+  let navBG = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      header.classList.remove('project-visible');
+    } else {
+      header.classList.add('project-visible');
+    }
+  }, {rootMargin: `${header.getBoundingClientRect().height * -1}px 0px ${document.body.offsetHeight}px 0px`});
 
-    scrollYPos = Math.round(window.scrollY);
-    updateLettersStyle();
+  navBG.observe(document.querySelector(".scroll-position"));
 
-    if (projectSection) {
-      const projectRect = projectSection.getBoundingClientRect();
-      if (projectRect.top <= headerHeight) {
-        header.classList.add('project-visible');
-      } else {
-        header.classList.remove('project-visible');
+  // ############################
+  // Add active style to nav links based on section visibility
+  // ############################
+    const observerOptions = {
+    root: null,
+    rootMargin: '-50% 0px -50% 0px',
+    threshold: 0
+  };
+
+  const linkSwitcher = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const sectionId = entry.target.getAttribute('id');
+      const correspondingLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+      
+      if (correspondingLink) {
+        if (entry.isIntersecting) {
+          // Remove 'active' class from all links
+          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+          // Add 'active' class to the current link
+          correspondingLink.classList.add('active');
+        }
       }
-    } 
-  }
+    });
+  }, observerOptions);
 
-  window.addEventListener('scroll', handleProjectScroll);
+  sections.forEach(section => {
+    linkSwitcher.observe(section);
+  });
 
+  // ############################
   // Keypresses to activate letters
-
+  // ############################
   let pos = 0;
 
   document.addEventListener('keyup', (e) => {
@@ -95,35 +135,9 @@ import Logo from './Logo.astro';
     }
   });
 
-  // Add 'active' class to nav links based on section visibility using Intersection Observer
-  const observerOptions = {
-    root: null,
-    rootMargin: '-50% 0px -50% 0px',
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const sectionId = entry.target.getAttribute('id');
-      const correspondingLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-      
-      if (correspondingLink) {
-        if (entry.isIntersecting) {
-          // Remove 'active' class from all links
-          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-          // Add 'active' class to the current link
-          correspondingLink.classList.add('active');
-        }
-      }
-    });
-  }, observerOptions);
-
-  // Observe all sections
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-
+  // ############################
   // Copy email to clipboard
+  // ############################
   document.querySelectorAll('.copy').forEach(button => {
     let timeoutId;
 

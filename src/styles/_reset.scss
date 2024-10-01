@@ -62,3 +62,14 @@ a[target] {
   background-color: var(--selection);
   color: var(--text);
 }
+
+.scroll-position {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-color: transparent;
+  z-index: -10;
+}

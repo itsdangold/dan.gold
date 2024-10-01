@@ -2,14 +2,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .25rem var(--site-margin);
+  padding: 1rem var(--site-margin);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   color: var(--text);
-  transition: padding .1s ease;
 
   ::selection {
     background-color: var(--yellow);
@@ -17,7 +16,6 @@ header {
 
   &.project-visible {
     background-color: var(--bg);
-    // padding: .25rem var(--site-margin);
   }
 }
 
@@ -62,17 +60,12 @@ nav {
   opacity: 0.6;
   color: inherit;
   transform-origin: left center;
-  transform: scale(.8);
-  
-  .project-visible & {
-    transform: scale(.8);
-  }
 
   &__inner {
     color: inherit;
     stroke: currentColor;
     stroke-width: 2.5px;
-    width: 2.5rem;
+    width: 2.25rem;
   }
 
   &:hover {
