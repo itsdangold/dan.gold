@@ -17,7 +17,7 @@
   --gold-bg: #FFB800;
   --gold-text: var(--white);
   --gold-text-pressed: var(--white);
-  --gold-text-shadow: 0px 8px rgb(159, 118, 13);
+  --gold-text-shadow: 0px .015em rgb(159, 118, 13);
   --gold-shadow-1: #B98809;
   --gold-shadow-2: #CE970A;
   --gold-shadow-3: #E5A80B;
@@ -26,7 +26,7 @@
   --blue-bg: #0046FB;
   --blue-text: var(--white);
   --blue-text-pressed: var(--white);
-  --blue-text-shadow: 0px 8px #002fa5;
+  --blue-text-shadow: 0px .015em #002fa5;
   --blue-shadow-1: #0037c3;
   --blue-shadow-2: #003DD7;
   --blue-shadow-3: #0041E7;
@@ -35,7 +35,7 @@
   --green-bg: #081F13;
   --green-text: #14FC00;
   --green-text-pressed: #14FC00;
-  --green-text-shadow: 0 0 8px var(--text), 0px 12px #030c04;
+  --green-text-shadow: 0 0 8px var(--text), 0px .02em #030c04;
   --green-shadow-1: #30992C;
   --green-shadow-2: #277029;
   --green-shadow-3: #194C1F;
