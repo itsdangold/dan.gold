@@ -5,7 +5,7 @@
   border-radius: 1rem;
   z-index: 4;
 
-  scroll-margin: 8rem;
+  scroll-margin: var(--site-margin);
 }
 
 .project {
