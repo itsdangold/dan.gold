@@ -1,5 +1,9 @@
 module.exports = {
   plugins: [
-    require('cssnano'),
+    require('cssnano')({
+      preset: ['default', {
+        colormin: false
+      }]
+    }),
   ],
 };
