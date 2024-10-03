@@ -32,7 +32,7 @@
   --green-bg: hsl(149, 59%, 8%);
   --green-text: hsl(115, 100%, 49%);
   --green-text-pressed: hsl(115, 100%, 49%);
-  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsl(127, 60%, 3%);
+  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsla(149, 59%, 1%, .2);
   --green-shadow-1: hsl(118, 55%, 39%);
   --green-shadow-2: hsl(122, 48%, 30%);
   --green-shadow-3: hsl(127, 50%, 20%);
@@ -58,7 +58,7 @@
   --rain-shadow-3: hsla(var(--hue), 7%, 80%, 0.9);
   --rain-selection: hsla(var(--hue), 7%, 80%, 0.5);
 
-  animation: hue-rotate 120s linear infinite -30s;
+  animation: hue-rotate 80s linear infinite -10s;
 }
 
 [data-theme="rain"] {

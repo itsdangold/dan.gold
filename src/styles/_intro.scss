@@ -6,6 +6,7 @@
   padding: 8rem var(--site-margin);
   color: var(--white);
   z-index: 2;
+  min-height: 60vh;
 
   &::after {
     [data-theme="neo"] & {
@@ -15,12 +16,12 @@
       inset: 0;
       z-index: 10;
 
-      background: repeating-linear-gradient(transparent, transparent 8px, var(--bg) 8px, var(--bg) 8.5px);
-      filter: blur(1px);
+      background: repeating-linear-gradient(transparent, transparent 8px, hsl(149, 59%, 12%) 8px, hsl(149, 59%, 12%) 9px);
+      filter: blur(1.5px);
       mix-blend-mode: difference;
-      opacity: .75;
-      animation: lines 80s linear infinite;
-      background-size: 100% 8.5px;
+      opacity: .7;
+      animation: lines 120s infinite;
+      background-size: 100% 9px;
 
       @keyframes lines {
         from {
