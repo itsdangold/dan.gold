@@ -40,18 +40,10 @@ import Logo from './Logo.astro';
   // ############################
   let scrollYPos = 0;
 
-  function shadowPosition() {
+  const scrollShadow = new IntersectionObserver(() => {
     scrollYPos = Math.round(window.scrollY);
     letters.style.setProperty("--scrollY-pos", scrollYPos);
-  }
-
-  const scrollShadow = new IntersectionObserver((entries) => {
-    shadowPosition();
-    window.addEventListener('scroll', shadowPosition);
-    if (!entries[0].isIntersecting) {
-      window.removeEventListener('scroll', shadowPosition);
-    }
-  }, {});
+  }, {threshold: Array.from(Array(1000), (_,x) => x/1000)});
   
   scrollShadow.observe(document.querySelector('.intro'));
   
