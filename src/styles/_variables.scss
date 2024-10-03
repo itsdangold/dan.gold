@@ -1,58 +1,75 @@
-:root {
-  --site-margin: 1.75rem;
+@property --hue {
+  initial-value: 203;
+  inherits: false;
+  syntax: '<number>';
+}
 
-  --white: #fff;
+:root {
+  --site-margin: clamp(1rem, 3vw, 1.75rem);
+
+  --white: hsl(0, 0%, 100%);
   --grey: hsla(0, 0%, 0%, 0.05);
   --black: hsl(0, 0%, 9%);
   
-  --mint-bg: #E8F3ED;
-  --mint-text: #3D4B54;
-  --mint-text-pressed: rgba(61, 75, 84, .9);
-  --mint-text-shadow: 0px 8px 8px var(--bg), 0 0 0 #3D4B54, 0px 8px 8px var(--bg);
-  --mint-shadow-1: #748085;
-  --mint-shadow-2: #ABB6B6;
-  --mint-shadow-3: #C6D1CE;
-  --mint-selection: rgba(198, 209, 206, 0.5);
-  
-  --gold-bg: #FFB800;
+  --gold-bg: hsl(43, 100%, 50%);
   --gold-text: var(--white);
   --gold-text-pressed: var(--white);
-  --gold-text-shadow: 0px .015em rgb(159, 118, 13);
-  --gold-shadow-1: #B98809;
-  --gold-shadow-2: #CE970A;
-  --gold-shadow-3: #E5A80B;
-  --gold-selection: #E5A80B;
+  --gold-text-shadow: 0px .015em hsl(43, 85%, 34%);
+  --gold-shadow-1: hsl(43, 91%, 38%);
+  --gold-shadow-2: hsl(43, 91%, 42%);
+  --gold-shadow-3: hsl(43, 91%, 47%);
+  --gold-selection: hsl(43, 91%, 47%);
 
-  --blue-bg: #0046FB;
+  --blue-bg: hsl(223, 100%, 49%);
   --blue-text: var(--white);
   --blue-text-pressed: var(--white);
-  --blue-text-shadow: 0px .015em #002fa5;
-  --blue-shadow-1: #0037c3;
-  --blue-shadow-2: #003DD7;
-  --blue-shadow-3: #0041E7;
-  --blue-selection: #0041E7;
+  --blue-text-shadow: 0px .015em hsl(223, 100%, 32%);
+  --blue-shadow-1: hsl(223, 100%, 38%);
+  --blue-shadow-2: hsl(223, 100%, 42%);
+  --blue-shadow-3: hsl(223, 100%, 45%);
+  --blue-selection: hsl(223, 100%, 45%);
   
-  --green-bg: #081F13;
-  --green-text: #14FC00;
-  --green-text-pressed: #14FC00;
-  --green-text-shadow: 0 0 8px var(--text), 0px .02em #030c04;
-  --green-shadow-1: #30992C;
-  --green-shadow-2: #277029;
-  --green-shadow-3: #194C1F;
-  --green-selection: #194C1F;
+  --green-bg: hsl(149, 59%, 8%);
+  --green-text: hsl(115, 100%, 49%);
+  --green-text-pressed: hsl(115, 100%, 49%);
+  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsl(127, 60%, 3%);
+  --green-shadow-1: hsl(118, 55%, 39%);
+  --green-shadow-2: hsl(122, 48%, 30%);
+  --green-shadow-3: hsl(127, 50%, 20%);
+  --green-selection: hsl(127, 50%, 20%);
 
   --glow: 0 2px 4px transparent;
+
+  @keyframes hue-rotate {
+    0%, 100% {
+      --hue: 0;
+    } 
+    50% {
+      --hue: 360;
+    }
+  }
+
+  --rain-bg: hsl(var(--hue), 31%, 93%);
+  --rain-text: hsl(var(--hue), 16%, 24%);
+  --rain-text-pressed: hsla(var(--hue), 16%, 28%, .95);
+  --rain-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
+  --rain-shadow-1: hsla(var(--hue), 7%, 50%, 0.9);
+  --rain-shadow-2: hsla(var(--hue), 7%, 70%, 0.9);
+  --rain-shadow-3: hsla(var(--hue), 7%, 80%, 0.9);
+  --rain-selection: hsla(var(--hue), 7%, 80%, 0.5);
+
+  animation: hue-rotate 120s linear infinite -30s;
 }
 
 [data-theme="rain"] {
-  --bg: var(--mint-bg);
-  --text: var(--mint-text);
-  --text-pressed: var(--mint-text-pressed);
-  --text-shadow: var(--mint-text-shadow);
-  --shadow-1: var(--mint-shadow-1);
-  --shadow-2: var(--mint-shadow-2);
-  --shadow-3: var(--mint-shadow-3);
-  --selection: var(--mint-selection);
+  --bg: var(--rain-bg);
+  --text: var(--rain-text);
+  --text-pressed: var(--rain-text-pressed);
+  --text-shadow: var(--rain-text-shadow);
+  --shadow-1: var(--rain-shadow-1);
+  --shadow-2: var(--rain-shadow-2);
+  --shadow-3: var(--rain-shadow-3);
+  --selection: var(--rain-selection);
 }
 
 [data-theme="gold"] {
