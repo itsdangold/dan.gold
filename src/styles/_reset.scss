@@ -60,8 +60,7 @@ a[target] {
 }
 
 ::selection {
-  background-color: var(--selection);
-  color: var(--text);
+  background-color: var(--selection-bg);
 }
 
 .scroll-position {

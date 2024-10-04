@@ -1,5 +1,5 @@
 @property --hue {
-  initial-value: 203;
+  initial-value: 0;
   inherits: false;
   syntax: '<number>';
 }
@@ -10,6 +10,15 @@
   --white: hsl(0, 0%, 100%);
   --grey: hsla(0, 0%, 0%, 0.05);
   --black: hsl(0, 0%, 9%);
+
+  --blue-bg: hsl(223, 100%, 49%);
+  --blue-text: var(--white);
+  --blue-text-pressed: var(--white);
+  --blue-text-shadow: 0px .015em hsl(223, 100%, 32%);
+  --blue-shadow-1: hsla(223, 100%, 28%, .5);
+  --blue-shadow-2: hsla(223, 100%, 32%, .5);
+  --blue-shadow-3: hsla(223, 100%, 40%, .5);
+  --blue-selection-bg: hsla(223, 100%, 80%, .45);
   
   --gold-bg: hsl(43, 100%, 50%);
   --gold-text: var(--white);
@@ -18,16 +27,7 @@
   --gold-shadow-1: hsl(43, 91%, 38%);
   --gold-shadow-2: hsl(43, 91%, 42%);
   --gold-shadow-3: hsl(43, 91%, 47%);
-  --gold-selection: hsl(43, 91%, 47%);
-
-  --blue-bg: hsl(223, 100%, 49%);
-  --blue-text: var(--white);
-  --blue-text-pressed: var(--white);
-  --blue-text-shadow: 0px .015em hsl(223, 100%, 32%);
-  --blue-shadow-1: hsl(223, 100%, 38%);
-  --blue-shadow-2: hsl(223, 100%, 42%);
-  --blue-shadow-3: hsl(223, 100%, 45%);
-  --blue-selection: hsl(223, 100%, 45%);
+  --gold-selection-bg: hsla(43, 100%, 70%, 0.75);
   
   --green-bg: hsl(149, 59%, 8%);
   --green-text: hsl(115, 100%, 49%);
@@ -36,7 +36,7 @@
   --green-shadow-1: hsl(118, 55%, 39%);
   --green-shadow-2: hsl(122, 48%, 30%);
   --green-shadow-3: hsl(127, 50%, 20%);
-  --green-selection: hsl(127, 50%, 20%);
+  --green-selection-bg: hsla(118, 68%, 47%, 0.25);
 
   --glow: 0 2px 4px transparent;
 
@@ -53,10 +53,10 @@
   --rain-text: hsl(var(--hue), 16%, 24%);
   --rain-text-pressed: hsla(var(--hue), 16%, 28%, .95);
   --rain-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
-  --rain-shadow-1: hsla(var(--hue), 7%, 50%, 0.9);
-  --rain-shadow-2: hsla(var(--hue), 7%, 70%, 0.9);
-  --rain-shadow-3: hsla(var(--hue), 7%, 80%, 0.9);
-  --rain-selection: hsla(var(--hue), 7%, 80%, 0.5);
+  --rain-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
+  --rain-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
+  --rain-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
+  --rain-selection-bg: hsla(var(--hue), 50%, 50%, 0.25);
 
   animation: hue-rotate 60s linear infinite -10s;
 }
@@ -69,7 +69,7 @@
   --shadow-1: var(--rain-shadow-1);
   --shadow-2: var(--rain-shadow-2);
   --shadow-3: var(--rain-shadow-3);
-  --selection: var(--rain-selection);
+  --selection-bg: var(--rain-selection-bg);
 }
 
 [data-theme="gold"] {
@@ -80,7 +80,7 @@
   --shadow-1: var(--gold-shadow-1);
   --shadow-2: var(--gold-shadow-2);
   --shadow-3: var(--gold-shadow-3);
-  --selection: var(--gold-selection);
+  --selection-bg: var(--gold-selection-bg);
 }
 
 [data-theme="blueprint"] {
@@ -91,7 +91,7 @@
   --shadow-1: var(--blue-shadow-1);
   --shadow-2: var(--blue-shadow-2);
   --shadow-3: var(--blue-shadow-3);
-  --selection: var(--blue-selection);
+  --selection-bg: var(--blue-selection-bg);
 }
 
 [data-theme="neo"] {
@@ -103,5 +103,5 @@
   --shadow-2: var(--green-shadow-2);
   --shadow-3: var(--green-shadow-3);
   --glow: 0 0 8px var(--text);
-  --selection: var(--green-selection);
+  --selection-bg: var(--green-selection-bg);
 }
