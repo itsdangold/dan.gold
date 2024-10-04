@@ -58,7 +58,7 @@
   --rain-shadow-3: hsla(var(--hue), 7%, 80%, 0.9);
   --rain-selection: hsla(var(--hue), 7%, 80%, 0.5);
 
-  animation: hue-rotate 80s linear infinite -10s;
+  animation: hue-rotate 60s linear infinite -10s;
 }
 
 [data-theme="rain"] {
