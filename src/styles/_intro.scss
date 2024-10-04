@@ -7,6 +7,7 @@
   color: var(--white);
   z-index: 2;
   min-height: 60vh;
+  background-color: var(--bg);
 
   &::after {
     [data-theme="neo"] & {
@@ -42,7 +43,7 @@
 
 h1 {
   // (100vw - transform - margin) / magic number
-  font-size: calc((95.5vw - (var(--site-margin) * 2))/4);
+  font-size: calc((96vw - (var(--site-margin) * 2))/4);
 
   display: flex;
   flex-wrap: nowrap;
@@ -103,8 +104,12 @@ h1 {
   &:nth-child(1 of .letter) {
     letter-spacing: -.05em;
   }
-}
 
-.space {
-  width: 4vw;
+  &:nth-child(2 of .letter) {
+    letter-spacing: .001em;
+  }
+
+  &:nth-child(4 of .letter) {
+    margin-left: clamp(0em, 3vw, .4em);
+  }
 }
