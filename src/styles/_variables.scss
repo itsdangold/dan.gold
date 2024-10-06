@@ -50,15 +50,15 @@
   }
 
   --rain-bg: hsl(var(--hue), 31%, 93%);
-  --rain-text: hsl(var(--hue), 16%, 24%);
-  --rain-text-pressed: hsla(var(--hue), 16%, 28%, .95);
+  --rain-text: hsl(var(--hue), 10%, 24%);
+  --rain-text-pressed: hsla(var(--hue), 10%, 28%, .95);
   --rain-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
   --rain-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
   --rain-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
   --rain-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
   --rain-selection-bg: hsla(var(--hue), 50%, 50%, 0.25);
 
-  animation: hue-rotate 50s linear infinite -10s;
+  animation: hue-rotate 40s linear infinite -10s;
 }
 
 [data-theme="rain"] {
