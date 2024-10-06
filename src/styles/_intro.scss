@@ -6,9 +6,9 @@
   padding: 8rem var(--site-margin);
   color: var(--text);
   z-index: 2;
-  min-height: 60vh;
+  min-height: 95vh;
   background-color: var(--bg);
-
+  
   &::after {
     [data-theme="neo"] & {
       content: '';
