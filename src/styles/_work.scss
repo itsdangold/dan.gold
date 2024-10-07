@@ -1,7 +1,4 @@
 .work {
-  background-color: var(--white);
-  color: var(--black);
-  z-index: 4;
   scroll-margin: var(--site-margin);
 }
 
@@ -10,10 +7,12 @@
   flex-wrap: wrap;
   padding: var(--site-margin);
   gap: var(--site-margin);
+  border-bottom: 2px solid var(--grey);
 
   &-description {
     flex-basis: 20rem;
     flex-grow: 2;
+    padding: 2rem 0;
 
     &__text {
       position: sticky;
