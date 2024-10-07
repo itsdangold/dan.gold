@@ -3,6 +3,7 @@
   src: url('/fonts/DegularDisplay-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +19,7 @@
   src: url('/fonts/PPRightGroteskMono-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
@@ -30,16 +33,13 @@ h1, h2, h3 {
   letter-spacing: -.01em;
 }
 
-h4 {
+h4, .label {
   font-family: 'Right Grotesk Mono';
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: clamp(3rem, 5vw, 5rem);
-}
-
-h4 {
-  text-transform: uppercase;
 }
 
 p {

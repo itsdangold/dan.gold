@@ -1,27 +1,54 @@
 <article class="project">
   <div class="project-description">
     <div class="project-description__text">
-      <h4>Design</h4>
+      <p class="label">Design</p>
       <h2>Title</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, ipsa animi blanditiis quaerat, dolores sed sapiente architecto qui id esse illo cumque asperiores ipsam necessitatibus vero at deserunt, eos aliquam!</p>
     </div>
   </div>
   <div class="project-gallery">
-    <img src="/images/EA-1.jpg" width="3840" height="2160" alt="">
+    <img src="/images/ea/EA-1-1x.webp" srcset="
+    /images/ea/EA-1-1x.webp 960w,
+    /images/ea/EA-1-2x.webp 1920w,
+    /images/ea/EA-1-3x.webp 2880w,
+    /images/ea/EA-1-4x.webp 3840w,
+    "
+    width="3840" height="2160" alt="">
 
     <div class="project-gallery__grid">
-      <img src="/images/EA-2.jpg" width="3840" height="3840" alt="" class="image--square">
-      <img src="/images/EA-3.jpg" width="3840" height="3840" alt="" class="image--square">
+      <img src="/images/ea/EA-2-1x.webp" srcset="
+      /images/ea/EA-2-1x.webp 960w,
+      /images/ea/EA-2-2x.webp 1920w,
+      /images/ea/EA-2-3x.webp 2880w,
+      /images/ea/EA-2-4x.webp 3840w,
+      " width="3840" height="3840" alt="" class="image--square">
+
+      <img src="/images/ea/EA-3-1x.webp" srcset="
+      /images/ea/EA-3-1x.webp 960w,
+      /images/ea/EA-3-2x.webp 1920w,
+      /images/ea/EA-3-3x.webp 2880w,
+      /images/ea/EA-3-4x.webp 3840w,
+      " width="3840" height="3840" alt="" class="image--square">
     </div>
 
     <div class="comparison">
       <figure class="comparison__before">
-        <img src="/images/EA-dark.jpg" width="3600" height="2700" alt="" class="image--monitor">
+        <img src="/images/ea/EA-dark-1x.webp" srcset="
+        /images/ea/EA-dark-1x.webp 900w,
+        /images/ea/EA-dark-2x.webp 1800w,
+        /images/ea/EA-dark-3x.webp 2700w,
+        /images/ea/EA-dark-4x.webp 3600w,
+        " sizes="100vw" width="3600" height="2700" alt="" class="image--monitor">
       </figure>
       <figure class="comparison__after">
-        <img src="/images/EA-light.jpg" width="3600" height="2700" alt="" class="image--monitor">
+        <img src="/images/ea/EA-light-1x.webp" srcset="
+        /images/ea/EA-light-1x.webp 900w,
+        /images/ea/EA-light-2x.webp 1800w,
+        /images/ea/EA-light-3x.webp 2700w,
+        /images/ea/EA-light-4x.webp 3600w,
+        " sizes="100vw" width="3600" height="2700" alt="" class="image--monitor">
       </figure>
-      <input type="range" class="comparison__slider" step="0.1" value="75">
+      <input type="range" class="comparison__slider" step="0.1" value="75" aria-label="Image comparison slider">
     </div>
   </div>
 </article>
