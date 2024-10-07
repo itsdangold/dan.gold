@@ -14,31 +14,35 @@ header {
   color: var(--text);
   transition: margin .2s ease, border-radius .2s ease;
   border-radius: 10rem;
-
+  
   &::before, &::after {
     content: '';
     position: absolute;
     inset: 0;
     z-index: -2;
-    background-color: var(--bg);
     border-radius: 10rem;
     opacity: 0;
     transition: all .2s ease;
+  }
 
-    [data-theme="rain"] & {
+
+  &::before {
+    background-color: var(--black);
+    filter: blur(20px);
+  }
+
+  &::after {
+    background-color: var(--bg);
+
+    [data-theme="light"] & {
       background-color: var(--text);
     }
   }
 
-  &::before {
-    box-shadow: 0 0 0 1px var(--text), 0 0px 12px var(--text);
-  }
-
-
   &.project-visible {
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(15px);
 
-    [data-theme="rain"] & {
+    [data-theme="light"] & {
       color: var(--bg);
 
       nav a::after {
@@ -53,7 +57,7 @@ header {
         &--fill {
           fill: var(--text);
 
-          [data-theme="rain"] & {
+          [data-theme="light"] & {
             fill: var(--bg);
           }
         }
@@ -61,7 +65,7 @@ header {
         &--stroke {
           stroke: var(--bg);
 
-          [data-theme="rain"] & {
+          [data-theme="light"] & {
             stroke: var(--text);
           }
         }
@@ -72,7 +76,7 @@ header {
       opacity: .1;
     }
     &::after {
-      opacity: .925;
+      opacity: .9;
     }
   }
 }
@@ -86,7 +90,7 @@ nav {
     text-decoration: none;
     opacity: 0.75;
 
-    &::after {
+    &::before {
       content: '';
       display: block;
       width: 4px;
@@ -98,13 +102,17 @@ nav {
       opacity: 0;
       transform: translate(-50%, 0);
       transition: transform .3s ease, opacity .3s ease;
+
+      [data-theme="light"] .project-visible & {
+        background: var(--bg);
+      }
     }
 
-    &.active, &:hover, &:focus {
+    &.active, &:hover, &:focus-visible {
       opacity: 1;
     }
 
-    &.active::after {
+    &.active::before {
       opacity: 1;
       transform: translate(-50%, -120%);
     }
@@ -155,7 +163,7 @@ nav {
     transition: transform 0.15s ease;
   }
 
-  &:hover::before {
+  &:hover::before, &:focus-visible::before {
     transform: scaleY(1);
   }
 
@@ -174,7 +182,7 @@ nav {
     transition: all 0.15s ease;
   }
 
-  &:hover::after {
+  &:hover::after, &:focus-visible::after {
     opacity: 1;
     transform: translate(-50%, 0);
   }

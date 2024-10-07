@@ -94,6 +94,11 @@ h1 {
   padding: 0 .04em;
   margin: 0 -.04em;
 
+  &::selection {
+    background: none;
+    color: var(--text);
+  }
+
   [data-theme="neo"] & {
     text-shadow: var(--glow), var(--layer-1-x) var(--layer-1-y) 0px var(--shadow-1),
     var(--layer-2-x) var(--layer-2-y) 0px var(--shadow-2),

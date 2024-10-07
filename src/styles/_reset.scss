@@ -59,8 +59,51 @@ a[target] {
   }
 }
 
+
+
 ::selection {
-  background-color: var(--selection-bg);
+  background: var(--text);
+  color: var(--bg);
+
+  [data-theme="light"] & {
+    background: var(--selection-bg);
+    color: var(--text);
+  }
+
+  [data-theme="light"] .project-visible & {
+    color: var(--bg);
+  }
+
+  [data-theme="dark"] & {
+    color: var(--black);
+  }
+
+  [data-theme="blueprint"] .work &, [data-theme="international"] .work & {
+    background: var(--bg);
+    color: var(--text);
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    color: var(--text);
+
+    [data-theme="light"] .project-visible & {
+      color: var(--bg);
+    }
+  }
+
+  [data-theme="light"] .project-visible & {
+    outline-color: var(--bg);
+    // color: var(--bg);
+  }
 }
 
 .scroll-position {
@@ -87,6 +130,12 @@ body {
       opacity: 1;
     }
   }
+}
+
+main {
+  background-color: var(--white);
+  color: var(--black);
+  z-index: 4;
 }
 
 img {
