@@ -11,35 +11,6 @@
   --grey: hsla(0, 0%, 0%, 0.05);
   --black: hsl(0, 0%, 9%);
 
-  --blue-bg: hsl(223, 100%, 49%);
-  --blue-text: var(--white);
-  --blue-text-pressed: var(--white);
-  --blue-text-shadow: 0px .015em hsl(223, 100%, 32%);
-  --blue-shadow-1: hsla(223, 100%, 28%, .5);
-  --blue-shadow-2: hsla(223, 100%, 32%, .5);
-  --blue-shadow-3: hsla(223, 100%, 40%, .5);
-  --blue-selection-bg: hsla(223, 100%, 80%, .45);
-  
-  --gold-bg: hsl(43, 100%, 50%);
-  --gold-text: var(--white);
-  --gold-text-pressed: var(--white);
-  --gold-text-shadow: 0px .015em hsl(43, 85%, 34%);
-  --gold-shadow-1: hsl(43, 91%, 38%);
-  --gold-shadow-2: hsl(43, 91%, 42%);
-  --gold-shadow-3: hsl(43, 91%, 47%);
-  --gold-selection-bg: hsla(43, 100%, 70%, 0.75);
-  
-  --green-bg: hsl(149, 59%, 8%);
-  --green-text: hsl(115, 100%, 49%);
-  --green-text-pressed: hsl(115, 100%, 49%);
-  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsla(149, 59%, 1%, .2);
-  --green-shadow-1: hsl(118, 55%, 39%);
-  --green-shadow-2: hsl(122, 48%, 30%);
-  --green-shadow-3: hsl(127, 50%, 20%);
-  --green-selection-bg: hsla(118, 68%, 47%, 0.25);
-
-  --glow: 0 2px 4px transparent;
-
   @keyframes hue-rotate {
     0%, 100% {
       --hue: 0;
@@ -49,38 +20,71 @@
     }
   }
 
-  --rain-bg: hsl(var(--hue), 31%, 93%);
-  --rain-text: hsl(var(--hue), 10%, 24%);
-  --rain-text-pressed: hsla(var(--hue), 10%, 28%, .95);
-  --rain-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
-  --rain-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
-  --rain-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
-  --rain-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
-  --rain-selection-bg: hsla(var(--hue), 50%, 50%, 0.25);
+  animation: hue-rotate 80s linear infinite -10s;
 
-  animation: hue-rotate 40s linear infinite -10s;
+  --light-bg: hsl(var(--hue), 31%, 93%);
+  --light-text: hsl(var(--hue), 10%, 24%);
+  --light-text-pressed: hsla(var(--hue), 10%, 28%, .95);
+  --light-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
+  --light-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
+  --light-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
+  --light-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
+  --light-selection-bg: hsla(var(--hue), 50%, 50%, 0.25);
+
+  --dark-bg: hsl(var(--hue), 17%, 12%);
+  --dark-text: hsl(var(--hue), 100%, 92%);
+  --dark-text-pressed: hsl(var(--hue), 100%, 92%);
+  --dark-text-shadow: 0px .015em hsla(0, 0%, 0%, 1);
+  --dark-shadow-1: hsla(0, 0%, 0%, 1);
+  --dark-shadow-2: hsla(0, 0%, 0%, 0.2);
+  --dark-shadow-3: hsla(0, 0%, 0%, 0.1);
+
+  --blue-bg: hsl(223, 100%, 49%);
+  --blue-text: var(--white);
+  --blue-text-pressed: var(--white);
+  --blue-text-shadow: 0px .015em hsl(223, 100%, 32%);
+  --blue-shadow-1: hsla(223, 100%, 28%, .5);
+  --blue-shadow-2: hsla(223, 100%, 32%, .5);
+  --blue-shadow-3: hsla(223, 100%, 40%, .5);
+  
+  --orange-bg: hsl(22, 100%, 50%);
+  --orange-text: hsl(0, 0%, 100%);
+  --orange-text-pressed: hsl(0, 0%, 100%);
+  --orange-text-shadow: 0px .015em hsl(22, 100%, 30%);
+  --orange-shadow-1: hsl(22, 100%, 30%);
+  --orange-shadow-2: hsl(22, 100%, 35%);
+  --orange-shadow-3: hsl(22, 100%, 40%);
+
+  --green-bg: hsl(149, 59%, 8%);
+  --green-text: hsl(115, 100%, 49%);
+  --green-text-pressed: hsl(115, 100%, 49%);
+  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsla(149, 59%, 1%, .2);
+  --green-shadow-1: hsl(118, 55%, 29%);
+  --green-shadow-2: hsl(122, 48%, 22%);
+  --green-shadow-3: hsl(127, 50%, 15%);
+
+  --glow: 0 2px 4px transparent;
 }
 
-[data-theme="rain"] {
-  --bg: var(--rain-bg);
-  --text: var(--rain-text);
-  --text-pressed: var(--rain-text-pressed);
-  --text-shadow: var(--rain-text-shadow);
-  --shadow-1: var(--rain-shadow-1);
-  --shadow-2: var(--rain-shadow-2);
-  --shadow-3: var(--rain-shadow-3);
-  --selection-bg: var(--rain-selection-bg);
+[data-theme="light"] {
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  --text-pressed: var(--light-text-pressed);
+  --text-shadow: var(--light-text-shadow);
+  --shadow-1: var(--light-shadow-1);
+  --shadow-2: var(--light-shadow-2);
+  --shadow-3: var(--light-shadow-3);
+  --selection-bg: var(--light-selection-bg);
 }
 
-[data-theme="gold"] {
-  --bg: var(--gold-bg);
-  --text: var(--gold-text);
-  --text-pressed: var(--gold-text-pressed);
-  --text-shadow: var(--gold-text-shadow);
-  --shadow-1: var(--gold-shadow-1);
-  --shadow-2: var(--gold-shadow-2);
-  --shadow-3: var(--gold-shadow-3);
-  --selection-bg: var(--gold-selection-bg);
+[data-theme="dark"] {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --text-pressed: var(--dark-text-pressed);
+  --text-shadow: var(--dark-text-shadow);
+  --shadow-1: var(--dark-shadow-1);
+  --shadow-2: var(--dark-shadow-2);
+  --shadow-3: var(--dark-shadow-3);
 }
 
 [data-theme="blueprint"] {
@@ -91,7 +95,16 @@
   --shadow-1: var(--blue-shadow-1);
   --shadow-2: var(--blue-shadow-2);
   --shadow-3: var(--blue-shadow-3);
-  --selection-bg: var(--blue-selection-bg);
+}
+
+[data-theme="international"] {
+  --bg: var(--orange-bg);
+  --text: var(--orange-text);
+  --text-pressed: var(--orange-text-pressed);
+  --text-shadow: var(--orange-text-shadow);
+  --shadow-1: var(--orange-shadow-1);
+  --shadow-2: var(--orange-shadow-2);
+  --shadow-3: var(--orange-shadow-3);
 }
 
 [data-theme="neo"] {
