@@ -29,7 +29,8 @@
   --light-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
   --light-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
   --light-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
-  --light-selection-bg: hsla(var(--hue), 50%, 50%, 0.25);
+  --light-selection-bg: hsla(var(--hue), 30%, 80%, 0.75);
+  --light-underline: hsl(var(--hue), 50%, 60%);
 
   --dark-bg: hsl(var(--hue), 17%, 12%);
   --dark-text: hsl(var(--hue), 100%, 92%);
@@ -38,6 +39,7 @@
   --dark-shadow-1: hsla(0, 0%, 0%, 1);
   --dark-shadow-2: hsla(0, 0%, 0%, 0.2);
   --dark-shadow-3: hsla(0, 0%, 0%, 0.1);
+  --dark-underline: hsl(var(--hue), 100%, 70%);
 
   --blue-bg: hsl(223, 100%, 49%);
   --blue-text: var(--white);
@@ -46,6 +48,7 @@
   --blue-shadow-1: hsla(223, 100%, 28%, .5);
   --blue-shadow-2: hsla(223, 100%, 32%, .5);
   --blue-shadow-3: hsla(223, 100%, 40%, .5);
+  --blue-underline: hsl(223, 100%, 80%);
   
   --orange-bg: hsl(22, 100%, 50%);
   --orange-text: hsl(60, 100%, 97%);
@@ -54,6 +57,7 @@
   --orange-shadow-1: hsl(22, 100%, 30%);
   --orange-shadow-2: hsl(22, 100%, 35%);
   --orange-shadow-3: hsl(22, 100%, 40%);
+  --orange-underline: hsl(22, 100%, 25%);
 
   --green-bg: hsl(149, 59%, 8%);
   --green-text: hsl(115, 100%, 49%);
@@ -62,6 +66,7 @@
   --green-shadow-1: hsl(118, 55%, 29%);
   --green-shadow-2: hsl(122, 48%, 22%);
   --green-shadow-3: hsl(127, 50%, 15%);
+  --green-underline: hsl(118, 55%, 29%);
 
   --glow: 0 2px 4px transparent;
 }
@@ -75,6 +80,7 @@
   --shadow-2: var(--light-shadow-2);
   --shadow-3: var(--light-shadow-3);
   --selection-bg: var(--light-selection-bg);
+  --underline: var(--light-underline);
 }
 
 [data-theme="dark"] {
@@ -85,6 +91,7 @@
   --shadow-1: var(--dark-shadow-1);
   --shadow-2: var(--dark-shadow-2);
   --shadow-3: var(--dark-shadow-3);
+  --underline: var(--dark-underline);
 }
 
 [data-theme="blueprint"] {
@@ -95,6 +102,7 @@
   --shadow-1: var(--blue-shadow-1);
   --shadow-2: var(--blue-shadow-2);
   --shadow-3: var(--blue-shadow-3);
+  --underline: var(--blue-underline);
 }
 
 [data-theme="international"] {
@@ -105,6 +113,7 @@
   --shadow-1: var(--orange-shadow-1);
   --shadow-2: var(--orange-shadow-2);
   --shadow-3: var(--orange-shadow-3);
+  --underline: var(--orange-underline);
 }
 
 [data-theme="neo"] {
@@ -117,4 +126,5 @@
   --shadow-3: var(--green-shadow-3);
   --glow: 0 0 8px var(--text);
   --selection-bg: var(--green-selection-bg);
+  --underline: var(--green-underline);
 }
