@@ -73,10 +73,7 @@
 }
 
 .intro__title {
-  // (100vw - transform - margin) / magic number
-  // font-size: calc((96vw - (var(--site-margin) * 2))/4);
-  // font-size: calc(25.9vw - (var(--site-margin) * 2));
-  font-size: calc(24.8vw - (var(--site-margin)));
+  font-size: calc(24.65vw - (var(--site-margin)));
 
   display: flex;
   flex-wrap: nowrap;
