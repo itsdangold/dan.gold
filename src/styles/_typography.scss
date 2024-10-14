@@ -7,41 +7,62 @@
 }
 
 @font-face {
-  font-family: 'Neue Montreal';
-  src: url('/fonts/PPNeueMontreal-Medium.otf') format('opentype');
+  font-family: 'Degular';
+  src: url('/fonts/DegularDisplay-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Right Grotesk Mono';
-  src: url('/fonts/PPRightGroteskMono-Medium.otf') format('opentype');
+  font-family: 'Mori';
+  src: url('/fonts/PPMori-Regular.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
+html {
+  font-size: clamp(1rem, .8vw, 10rem);
+}
+
 body {
-  font-family: 'Neue Montreal', sans-serif;
-  color: var(--black);
+  font-family: 'Mori', sans-serif;
+  font-weight: 500;
+  color: var(--black-90);
 }
 
 h1, h2, h3 {
   font-family: 'Degular', sans-serif;
   line-height: 100%;
-  letter-spacing: -.01em;
 }
 
 h4, .label {
-  font-family: 'Right Grotesk Mono';
+  font-family: 'Degular';
   text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 h2 {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: calc(1.5vw + 1.75rem);
+  line-height: 85%;
+  letter-spacing: 0.01em;
+  font-weight: 500;
 }
 
 p {
   line-height: 150%;
+  letter-spacing: -.015em;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.2vw, 10rem);
+}
+
+a {
+  font-size: inherit;
+}
+
+nav {
+  font-size: clamp(1rem, .8vw, 10rem);
 }
