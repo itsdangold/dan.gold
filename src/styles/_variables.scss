@@ -1,34 +1,26 @@
-@property --hue {
-  initial-value: 0;
-  inherits: false;
-  syntax: '<number>';
-}
-
 :root {
-  --site-margin: clamp(1rem, 3vw, 1.75rem);
+  --site-margin: clamp(1rem, 1.25vw, 10rem);
 
   --white: hsl(0, 0%, 100%);
   --grey: hsla(0, 0%, 0%, 0.05);
-  --black: hsl(0, 0%, 9%);
+  --black-100: hsl(0, 0%, 9%);
+  --black-90: hsl(0, 0%, 20%);
+  
+  --scrollY-pos: 0;
+  --mouseX-pos: 0;
+  --mouseY-pos: 0;
+  --windowWidth: 0;
+  --windowHeight: 0;
 
-  @keyframes hue-rotate {
-    0%, 100% {
-      --hue: 0;
-    } 
-    50% {
-      --hue: 360;
-    }
-  }
+  --hue: 0;
 
-  animation: hue-rotate 80s linear infinite -10s;
-
-  --light-bg: hsl(var(--hue), 31%, 93%);
-  --light-text: hsl(var(--hue), 10%, 24%);
-  --light-text-pressed: hsla(var(--hue), 10%, 28%, .95);
-  --light-text-shadow: 0px 8px 8px var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px 8px 8px var(--bg);
-  --light-shadow-1: hsla(var(--hue), 10%, 50%, 0.5);
-  --light-shadow-2: hsla(var(--hue), 10%, 70%, 0.5);
-  --light-shadow-3: hsla(var(--hue), 10%, 80%, 0.5);
+  --light-bg: hsl(var(--hue), 40%, 93%);
+  --light-text: hsl(var(--hue), 25%, 20%);
+  --light-text-pressed: hsla(var(--hue), 25%, 20%, .95);
+  --light-text-shadow: 0px .5rem .5rem var(--bg), 0 0 0 hsl(var(--hue), 16%, 28%), 0px .5rem .5rem var(--bg);
+  --light-shadow-1: hsla(var(--hue), 12%, 70%);
+  --light-shadow-2: hsla(var(--hue), 18%, 82%);
+  --light-shadow-3: hsla(var(--hue), 27%, 89%);
   --light-selection-bg: hsla(var(--hue), 30%, 80%, 0.75);
   --light-underline: hsl(var(--hue), 50%, 60%);
 
@@ -52,7 +44,7 @@
   
   --orange-bg: hsl(22, 100%, 50%);
   --orange-text: hsl(60, 100%, 97%);
-  --orange-text-pressed: hsl(0, 0%, 100%);
+  --orange-text-pressed: hsl(60, 100%, 97%);
   --orange-text-shadow: 0px .015em hsl(22, 100%, 30%);
   --orange-shadow-1: hsl(22, 100%, 30%);
   --orange-shadow-2: hsl(22, 100%, 35%);
@@ -62,13 +54,13 @@
   --green-bg: hsl(149, 59%, 8%);
   --green-text: hsl(115, 100%, 49%);
   --green-text-pressed: hsl(115, 100%, 49%);
-  --green-text-shadow: 0 0 8px var(--text), 0px .02em hsla(149, 59%, 1%, .2);
+  --green-text-shadow: 0 0 .5rem var(--text), 0px .02em hsla(149, 59%, 1%, .2);
   --green-shadow-1: hsl(118, 55%, 29%);
   --green-shadow-2: hsl(122, 48%, 22%);
   --green-shadow-3: hsl(127, 50%, 15%);
-  --green-underline: hsl(118, 55%, 29%);
+  --green-underline: hsla(115, 800%, 50%, .5);
 
-  --glow: 0 2px 4px transparent;
+  --glow: 0 0.125rem .25rem transparent;
 }
 
 [data-theme="light"] {
@@ -124,7 +116,7 @@
   --shadow-1: var(--green-shadow-1);
   --shadow-2: var(--green-shadow-2);
   --shadow-3: var(--green-shadow-3);
-  --glow: 0 0 8px var(--text);
+  --glow: 0 0 .5rem var(--text);
   --selection-bg: var(--green-selection-bg);
   --underline: var(--green-underline);
 }

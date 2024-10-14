@@ -8,7 +8,7 @@ footer {
   color: var(--text);
   position: sticky;
   bottom: 0;
-  z-index: 0;
+  z-index: 10;
 
   div {
     z-index: 2;
@@ -47,11 +47,11 @@ footer {
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
-    height: 5rem;
-    background-color: var(--black);
+    width: 80%;
+    height: 2.5rem;
+    background-color: var(--black-100);
     border-radius: 100%;
-    filter: blur(30px);
+    filter: blur(2rem);
     opacity: .25;
     pointer-events: none;
     

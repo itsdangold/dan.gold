@@ -1,5 +1,12 @@
 .work {
-  scroll-margin: var(--site-margin);
+  scroll-margin: 6rem;
+  background-color: var(--white);
+  z-index: 20;
+  backface-visibility: hidden;
+
+  a {
+    color: inherit;
+  }
 }
 
 .project {
@@ -7,17 +14,26 @@
   flex-wrap: wrap;
   padding: var(--site-margin);
   gap: var(--site-margin);
-  border-bottom: 2px solid var(--grey);
+  z-index: 20;
+  background-color: var(--white);
+  backface-visibility: hidden;
+  transform: translate3d(0,0,0);
 
   &-description {
-    flex-basis: 20rem;
+    flex-basis: 30ch;
     flex-grow: 2;
-    padding: 2rem 0;
+    padding-bottom: 2rem;
+    background: var(--white);
 
     &__text {
       position: sticky;
-      top: calc(15vh + 5rem);
-      max-width: 65ch;
+      top: 8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 1.5rem;
+      z-index: 10;
+      transform: translate3d(0,0,0);
     }
   }
 
@@ -27,18 +43,34 @@
     min-width: 65%;
     display: flex;
     flex-direction: column;
-    gap: .25rem;
+    gap: .2rem;
+    background: var(--white);
 
     &__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: .25rem;
+      grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+      gap: .2rem;
     }
   }
 
-  p {
-    margin-top: 2rem;
+  h2 {
+    margin-bottom: .25em;
+    margin-top: .25em;
   }
+
+  h2, p {
+    max-width: 97.5%;
+  }
+}
+
+.tags {
+  padding-top: 1rem;
+  border-top: .1rem solid var(--grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
 }
 
 .comparison {
@@ -59,7 +91,7 @@
     grid-area: 1 / 1;
 
     img {
-      width: 100%;
+      width: 100vw;
     }
   }
 
@@ -76,7 +108,7 @@
 
     &::-webkit-slider-thumb {
       appearance: none;
-      width: 5px;
+      width: .3rem;
       border-radius: 1rem;
       position: absolute;
       top: -.75rem;
@@ -84,12 +116,12 @@
       left: var(--slider-pos);
       transform: translateX(-50%);
       background: linear-gradient(0deg, red, purple);
-      box-shadow: 0 0 8px rgba(0,0,0,.3);
+      box-shadow: 0 0 .5rem rgba(0,0,0,.3);
     }
 
     &::-moz-range-thumb {
       appearance: none;
-      width: 5px;
+      width: .3rem;
       border-radius: 1rem;
       position: absolute;
       top: -.75rem;
@@ -97,7 +129,7 @@
       left: var(--slider-pos);
       transform: translateX(-50%);
       background: linear-gradient(0deg, red, purple);
-      box-shadow: 0 0 8px rgba(0,0,0,.3);
+      box-shadow: 0 0 .5rem rgba(0,0,0,.3);
     }
   }
 }

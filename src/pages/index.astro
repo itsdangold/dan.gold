@@ -7,12 +7,20 @@ import Footer from '../components/Footer.astro';
 import '../styles/main.scss';
 ---
 
-<Layout title="Dan Gold | Designer & Developer">
+<Layout title="Dan Gold ❖ Designer & Developer">
 	<Nav />
 
 	<main>
 		<Intro />
 		<Work />
-		<Footer />
+		<section style="height: 200vh;background:white; z-index: 20; backface-visibility: hidden;" class="about" id="about"></section>
 	</main>
+
+	<Footer />
+
+	<div class="lines">
+		<div class="lines-x"></div>
+		<div class="lines-y"></div>
+		<div class="lines-pointer"></div>
+	</div>
 </Layout>

@@ -6,10 +6,10 @@ import Logo from './Logo.astro';
   <Logo />
 
   <nav>
-    <a href="#intro">Intro</a>
-    <a href="#work">Work</a>
-    <a href="#about">About</a>
-    <button class="copy" aria-label="Copy email">hello@dan.gold</button>
+    <a href="#" data-link="intro">Intro</a>
+    <a href="#work" data-link="work">Work</a>
+    <a href="#about" data-link="about">About</a>
+    <button class="copy" aria-label="Copy email" type="button">hello@dan.gold</button>
   </nav>
 </header>
 
@@ -17,7 +17,6 @@ import Logo from './Logo.astro';
   const header = document.querySelector('.site-header');
   const logo = document.querySelector('.nav-logo');
   const sections = [...document.querySelectorAll('section')];
-  const letters = document.querySelector('.intro h1');
   const lettersInner = document.querySelectorAll('.letter');
   
   // ############################
@@ -36,17 +35,41 @@ import Logo from './Logo.astro';
   })
 
   // ############################
+  // Hue rotate
+  // ############################
+
+  let hue = 270;
+
+  function hueRotate() {
+    document.documentElement.style.setProperty("--hue", hue);
+    hue+=2;
+
+    if (hue > 360) {
+      hue = 0;
+    }
+  }
+  
+  setInterval(() => {
+    if (document.hasFocus()) {
+      requestAnimationFrame(hueRotate);
+    }
+  }, 1000 / 4);
+  
+  // ############################
   // Shadow position
   // ############################
   let scrollYPos = 0;
 
   const scrollShadow = new IntersectionObserver(() => {
     scrollYPos = Math.round(window.scrollY);
-    letters.style.setProperty("--scrollY-pos", scrollYPos);
-  }, {threshold: Array.from(Array(1000), (_,x) => x/1000)});
+    document.documentElement.style.setProperty("--scrollY-pos", scrollYPos);
+  }, {
+    rootMargin: "-70% 0px 0px 0px",
+    threshold: Array.from(Array(101), (_,x) => x/100)
+  });
   
-  scrollShadow.observe(document.querySelector('.intro'));
-  
+  scrollShadow.observe(document.querySelector('.scroll-shadow-position'));
+
   // ############################
   // Add nav background on scroll
   // ############################
@@ -63,16 +86,20 @@ import Logo from './Logo.astro';
   // ############################
   // Add active style to nav links based on section visibility
   // ############################
-    const observerOptions = {
-    root: null,
-    rootMargin: '-50% 0px -50% 0px',
-    threshold: 0
-  };
-
   const linkSwitcher = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const sectionId = entry.target.getAttribute('id');
-      const correspondingLink = document.querySelector(`nav a[href="#${sectionId}"]`);
+      const sectionId = entry.target.getAttribute('class');
+      const correspondingLink = document.querySelector(`[data-link="${sectionId}"]`);
+
+      if (!entry.isIntersecting && sectionId == 'work' && entry.boundingClientRect.top > (window.innerHeight * .3)){
+        document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+        document.querySelector("[data-link='intro']").classList.add('active');
+      }
+
+      if (!entry.isIntersecting && sectionId == 'about' && entry.boundingClientRect.top > (window.innerHeight * .3) && document.querySelector('.work').getBoundingClientRect().top > (window.innerHeight * .3)){
+        document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+        document.querySelector("[data-link='intro']").classList.add('active');
+      }
       
       if (correspondingLink) {
         if (entry.isIntersecting) {
@@ -83,7 +110,11 @@ import Logo from './Logo.astro';
         }
       }
     });
-  }, observerOptions);
+  }, {
+    root: null,
+    rootMargin: '-30% 0px -70% 0px',
+    threshold: 0
+  });
 
   sections.forEach(section => {
     linkSwitcher.observe(section);
@@ -119,12 +150,44 @@ import Logo from './Logo.astro';
         if (key == 'D' && index !== pos) {
           letter.classList.remove('active');                      
         }
+        
+        if (key == 'L') {
+          toggleLines();
+        }
       }
     });
 
     if (key == 'D') {
       pos == 0 ? pos = lettersInner.length - 1 : pos = 0;
     }
+  });
+  
+  // ############################
+  // Mouse tracker
+  // ############################
+
+  let linesVisible = false;
+  let lines = document.querySelector('.lines');
+
+  function toggleLines() {
+    lines.classList.toggle('lines--active');
+
+    linesVisible == false ? linesVisible = true : linesVisible = false;
+
+    if (linesVisible == true) {
+      window.addEventListener('mousemove', trackMouse);
+    } else {
+      window.removeEventListener('mousemove', trackMouse);
+    }
+  }
+  
+  function trackMouse() {
+    document.documentElement.style.setProperty("--mouseX-pos", window.event.clientX);
+    document.documentElement.style.setProperty("--mouseY-pos", window.event.clientY);
+  }
+
+  document.querySelector("[data-letter='l']").addEventListener('click', () => {
+    toggleLines();
   });
 
   // ############################
