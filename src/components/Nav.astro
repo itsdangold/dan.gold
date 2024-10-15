@@ -212,4 +212,28 @@ import Logo from './Logo.astro';
       }, 3000);
     });
   });
+
+  // ############################
+  // Copy email to clipboard
+  // ############################
+
+  const lazyImages = document.querySelectorAll('.lazy');
+
+  const lazyLoad = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.setAttribute('src', entry.target.getAttribute("data-src"));
+        entry.target.setAttribute('srcset', entry.target.getAttribute("data-srcset"));
+        entry.target.classList.add('lazy--loaded');
+        lazyLoad.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: "-10% 0px -10% 0px"
+  });
+
+  lazyImages.forEach(image => {
+    lazyLoad.observe(image);
+  });
+
 </script>

@@ -205,6 +205,19 @@ img {
   border-radius: .25rem;
 }
 
+.lazy {
+  background: var(--grey);
+  opacity: 0;
+  transition: .2s ease-out;
+  transform: translateY(.5rem);
+
+  &--loaded {
+    opacity: 1;
+    background: transparent;
+    transform: translateY(0);
+  }
+}
+
 .image--square {
   aspect-ratio: 1 / 1;
 }
