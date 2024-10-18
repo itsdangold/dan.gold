@@ -152,6 +152,7 @@ nav {
   transition: background-size .15s ease;
   opacity: 1;
   color: inherit;
+  line-height: 100%;
 
   &:hover, &:focus-visible {
     background-size: 100% 45%;
@@ -159,7 +160,6 @@ nav {
 
   &::after {
     content: 'Copy to clipboard';
-
     font-size: 0.75em;
     position: absolute;
     top: calc(100% + 0.3em);

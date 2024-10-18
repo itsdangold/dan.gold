@@ -130,6 +130,7 @@
   padding: 0 .04em;
   margin: 0 -.04em;
   transform: translate3d(0,0,0);
+  
   &::selection {
     background: none;
     color: var(--text);

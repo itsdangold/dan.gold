@@ -62,6 +62,11 @@ import Logo from './Logo.astro';
 
   const scrollShadow = new IntersectionObserver(() => {
     scrollYPos = Math.round(window.scrollY);
+
+    if (scrollYPos > window.innerHeight * .8) {
+      scrollYPos = window.innerHeight * .8;
+    }
+    
     document.documentElement.style.setProperty("--scrollY-pos", scrollYPos);
   }, {
     rootMargin: "-70% 0px 0px 0px",
@@ -222,8 +227,15 @@ import Logo from './Logo.astro';
   const lazyLoad = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.setAttribute('src', entry.target.getAttribute("data-src"));
-        entry.target.setAttribute('srcset', entry.target.getAttribute("data-srcset"));
+        const src = entry.target.getAttribute("data-src");
+        entry.target.setAttribute('src', src);
+        
+        const srcset = entry.target.getAttribute("data-srcset");
+
+        if (srcset != null) {
+          entry.target.setAttribute('srcset', srcset);
+        }
+
         entry.target.classList.add('lazy--loaded');
         lazyLoad.unobserve(entry.target);
       }
