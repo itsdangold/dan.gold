@@ -1,7 +1,8 @@
 .about {
+  background: var(--white);
   background-color: var(--white);
-  z-index: 20;
-  backface-visibility: hidden;
+  z-index: 30;
+  backface-visibility: visible;
   padding: 10vw var(--site-margin);
   scroll-margin: 3rem;
   display: flex;
@@ -74,6 +75,7 @@
       flex-wrap: wrap;
       gap: 1.5rem;
       margin-top: 2rem;
+      max-width: 40ch;
     }
   }
 }
