@@ -9,7 +9,7 @@ body {
   &::after {
     [data-theme="neo"] & {
       content: '';
-      position: absolute;
+      position: fixed;
       pointer-events: none;
       inset: 0;
       z-index: 10;
@@ -18,22 +18,7 @@ body {
       filter: blur(.1rem);
       mix-blend-mode: difference;
       opacity: .7;
-      animation: lines 500s infinite;
       background-size: 100% .5625rem;
-  
-      @keyframes lines {
-        from {
-          background-position-y: 0%;
-        }
-  
-        to {
-          background-position-y: 100%;
-        }
-      }
-  
-      @media (prefers-reduced-motion: reduce) {
-        animation: none;
-      }
     }
   
     [data-theme="blueprint"] & {
@@ -43,9 +28,9 @@ body {
       inset: 0;
       z-index: -1;
   
-      background: repeating-linear-gradient(transparent, transparent var(--site-margin), hsl(0, 0%, 100%) var(--site-margin), hsl(0, 0%, 100%) calc(var(--site-margin) + 0.09375rem)),
-      repeating-linear-gradient(90deg, transparent, transparent var(--site-margin), hsl(0, 0%, 100%) var(--site-margin), hsl(0, 0%, 100%) calc(var(--site-margin) + 0.09375rem));
-      background-size: 100% calc(var(--site-margin) + 0.09375rem);
+      background: repeating-linear-gradient(transparent, transparent 1rem, hsl(0, 0%, 100%) 1rem, hsl(0, 0%, 100%) calc(1rem + 0.09375rem)),
+      repeating-linear-gradient(90deg, transparent, transparent 1rem, hsl(0, 0%, 100%) 1rem, hsl(0, 0%, 100%) calc(1rem + 0.09375rem));
+      background-size: 100% calc(1rem + 0.09375rem);
       opacity: .1;
     }
   }
