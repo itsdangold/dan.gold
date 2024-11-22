@@ -22,10 +22,6 @@
   font-display: swap;
 }
 
-html {
-  font-size: clamp(1rem, .8vw, 10rem);
-}
-
 body {
   font-family: 'Mori', sans-serif;
   font-weight: 500;
@@ -38,14 +34,14 @@ h1, h2, h3 {
 }
 
 h2 {
-  font-size: calc(1.25vw + 2.25rem);
+  font-size: calc(1.125vw + 1.75rem);
   line-height: 85%;
   letter-spacing: 0.01em;
   font-weight: 500;
 }
 
 h3 {
-  font-size: calc(1.25vw + 1.75rem);
+  font-size: calc(1.25vw + 1.5rem);
   line-height: 85%;
   letter-spacing: 0.01em;
   font-weight: 500;
@@ -63,20 +59,16 @@ p {
   line-height: 150%;
   letter-spacing: -.015em;
   font-weight: 500;
-  font-size: clamp(1.1rem, 1.2vw, 10rem);
+  font-size: clamp(1rem, 1.05vw, 10rem);
 }
 
 .large {
-  line-height: 110%;
+  line-height: 150%;
   letter-spacing: -.015em;
   font-weight: 500;
-  font-size: clamp(1.25rem, 1.5vw, 10rem);
+  font-size: clamp(1.35rem, 1.35vw, 10rem);
 }
 
 a {
   font-size: inherit;
-}
-
-nav {
-  font-size: clamp(1rem, .8vw, 10rem);
 }

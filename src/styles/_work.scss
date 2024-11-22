@@ -2,6 +2,7 @@
   scroll-margin: 6rem;
   z-index: 20;
   padding-bottom: 4rem;
+  margin-top: 10rem;
 
   a {
     color: inherit;
@@ -26,7 +27,7 @@
       display: flex;
       flex-direction: column;
       align-items: start;
-      gap: 1.5rem;
+      gap: 1rem;
       z-index: 10;
     }
   }
@@ -38,7 +39,6 @@
     display: flex;
     flex-direction: column;
     gap: .2rem;
-    background: var(--white);
     padding-bottom: 4rem;
 
     &__grid {
@@ -49,8 +49,7 @@
   }
 
   h2 {
-    margin-bottom: .25em;
-    margin-top: .25em;
+    margin-bottom: .5em;
   }
 
   h2, p {
@@ -59,8 +58,6 @@
 }
 
 .tags {
-  padding-top: 1rem;
-  border-top: .1rem solid var(--grey);
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -68,7 +68,7 @@ nav {
   margin-right: 1rem;
 
   &__inner {
-    width: clamp(2rem, 1.5vw, 10rem);
+    width: 2rem;
 
     &--fill {
       fill: transparent;
@@ -121,6 +121,9 @@ nav {
   &:hover, &:focus-visible {
     background-size: 100% 45%;
   }
+
+
+    margin-top: .5rem;
 
   &::after {
     content: 'Copy to clipboard';

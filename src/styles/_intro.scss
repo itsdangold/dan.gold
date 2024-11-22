@@ -21,13 +21,13 @@
 }
 
 .intro__title {
-  font-size: calc(25.25vw - (var(--site-margin)));
+  font-size: calc(25.25vw - 1rem);
   
   @media (min-width: 800px) {
-    font-size: calc(25vw - 3.5rem);
+    font-size: calc(24.75vw - 3rem);
   }
 
-  margin-top: 6rem;
+  margin-top: 8rem;
 
   @media (min-width: 800px) {
     margin-top: -5vw;
