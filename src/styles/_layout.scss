@@ -1,9 +1,9 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  
+
   @media (min-width: 800px) {
-    padding-left: 9rem;
+    padding-left: 8.8rem;
   }
   
   &::after {

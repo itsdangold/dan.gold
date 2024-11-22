@@ -83,6 +83,29 @@ nav {
   &:hover {
     opacity: .6;
   }
+
+  animation: wiggle 10s ease 2s infinite;
+
+  @keyframes wiggle {
+    3% {
+      transform: scale(1.0125);
+    }
+    4%, 6% {
+      transform: rotate(-10deg) scale(1.0125);
+    }
+    5% {
+      transform: rotate(10deg) scale(1.0125);
+    }
+    7% {
+      transform: rotate(0deg) scale(1.0125);
+    }
+    8% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 }
 
 .copy {
