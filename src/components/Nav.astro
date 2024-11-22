@@ -76,19 +76,6 @@ import Logo from './Logo.astro';
   scrollShadow.observe(document.querySelector('.scroll-shadow-position'));
 
   // ############################
-  // Add nav background on scroll
-  // ############################
-  let navBG = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      header.classList.remove('project-visible');
-    } else {
-      header.classList.add('project-visible');
-    }
-  }, {rootMargin: `${header.getBoundingClientRect().height * -1}px 0px ${document.body.offsetHeight}px 0px`});
-
-  navBG.observe(document.querySelector(".scroll-position"));
-
-  // ############################
   // Add active style to nav links based on section visibility
   // ############################
   const linkSwitcher = new IntersectionObserver((entries) => {
@@ -203,7 +190,7 @@ import Logo from './Logo.astro';
 
     button.addEventListener('click', () => {
       navigator.clipboard.writeText(button.textContent);
-      button.classList.add('active');
+      button.classList.add('copied');
 
       // Clear existing timeout if it's running
       if (timeoutId) {
@@ -212,7 +199,7 @@ import Logo from './Logo.astro';
 
       // Set new timeout
       timeoutId = setTimeout(() => {
-        button.classList.remove('active');
+        button.classList.remove('copied');
         timeoutId = null;
       }, 3000);
     });
