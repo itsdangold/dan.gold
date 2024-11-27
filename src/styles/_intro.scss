@@ -12,7 +12,7 @@
   margin-top: 2rem;
 
   p {
-    max-width: 47ch;
+    // max-width: 47ch;
   
     + * {
       margin-top: .75em;
@@ -45,7 +45,7 @@
   
   --layer-1-y: calc((var(--scrollY-pos) * .05px) + .75vw);
   --layer-2-y: calc((var(--scrollY-pos) * .1px) + 1.5vw);
-  --layer-3-y: calc((var(--scrollY-pos) * .15px) + 2.25vw);
+  --layer-3-y: calc((var(--scrollY-pos) * .15px) + 4vw);
 
   --layer-1-x: 0;
   --layer-2-x: 0;
@@ -71,9 +71,6 @@
 }
 
 .letter {
-  text-shadow: var(--layer-1-x) var(--layer-1-y) 0px var(--shadow-1),
-  var(--layer-2-x) var(--layer-2-y) 0px var(--shadow-2),
-  var(--layer-3-x) var(--layer-3-y) 0px var(--shadow-3);
   transition: transform .1s ease, text-shadow .1s ease;
   transform-origin: center;
   display: inline-block;
@@ -90,6 +87,20 @@
   &::selection {
     background: none;
     color: var(--text);
+  }
+
+  &::before {
+    content: attr(data-letter);
+    color: var(--shadow-1);
+    position: absolute;
+    z-index: -1;
+    text-shadow: var(--layer-1-x) var(--layer-1-y) 0px var(--shadow-1),
+    var(--layer-2-x) var(--layer-2-y) 0px var(--shadow-2),
+    var(--layer-3-x) var(--layer-3-y) 0px var(--shadow-3);
+    transform: scaleY(calc(1 + (var(--scrollY-pos)*.001)));
+    transform-origin: top;
+    opacity: .5;
+    // filter: blur(10px);
   }
 
   [data-theme="neo"] & {

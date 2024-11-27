@@ -1,14 +1,10 @@
 .about {
-  background: var(--white);
-  background-color: var(--white);
   z-index: 30;
-  backface-visibility: visible;
-  padding: 10vw var(--site-margin);
   scroll-margin: 3rem;
   display: flex;
   flex-wrap: wrap;
   gap: var(--site-margin);
-  border-top: 2px solid var(--grey);
+  padding: var(--site-margin);
 
   &-profile {
     flex-basis: 20ch;
@@ -20,30 +16,11 @@
     margin-bottom: 2rem;
 
     img {
-      max-width: 25rem;
+      max-width: 20rem;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       position: sticky;
       top: 20%;
-      animation: spin 20s linear infinite;
-      animation-play-state: paused;
-
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-        50% {
-          transform: rotate(180deg);
-        }
-
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
-      &:hover {
-        animation-play-state: running;
-      }
     }
   }
 
@@ -57,7 +34,7 @@
 
     > * {
       & + * {
-        margin-top: 1.5em;
+        margin-top: 1em;
       }
     }
 
@@ -73,7 +50,7 @@
     &__links {
       display: flex;
       flex-wrap: wrap;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 2rem;
       max-width: 40ch;
     }
