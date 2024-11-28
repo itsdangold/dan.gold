@@ -21,35 +21,111 @@
 }
 
 .intro__title {
-  font-size: calc(25.25vw - 1rem);
-  
-  @media (min-width: 800px) {
-    font-size: calc(24.75vw - 3rem);
-  }
-
-  margin-top: 8rem;
-
-  @media (min-width: 800px) {
-    margin-top: -5vw;
-  }
+  font-size: calc(100vw / 5.03);
 
   display: flex;
   flex-wrap: nowrap;
   text-transform: uppercase;
   font-weight: 900;
-  transform: translateX(-.74%);
-  letter-spacing: -.01em;
+  transform: translateX(-1.3%);
+  letter-spacing: -.065em;
 
-  color: var(--text);
+  // color: hsl(var(--hue), 20%, 30%);
+  color: white;
   opacity: 1;
-  
-  --layer-1-y: calc((var(--scrollY-pos) * .05px) + .75vw);
-  --layer-2-y: calc((var(--scrollY-pos) * .1px) + 1.5vw);
-  --layer-3-y: calc((var(--scrollY-pos) * .15px) + 4vw);
 
-  --layer-1-x: 0;
-  --layer-2-x: 0;
-  --layer-3-x: 0;
+  margin-top: 3rem;
+  
+  --shadow-stretch: calc(1 + (var(--scrollY-pos) * 0.005));
+  
+  text-shadow:
+  calc(-.002em * var(--shadow-stretch)) calc(.0025em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.003em * var(--shadow-stretch)) calc(.005em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.004em * var(--shadow-stretch)) calc(.0075em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.005em * var(--shadow-stretch)) calc(.01em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.006em * var(--shadow-stretch)) calc(.0125em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.007em * var(--shadow-stretch)) calc(.015em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.008em * var(--shadow-stretch)) calc(.0175em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.009em * var(--shadow-stretch)) calc(.02em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.01em * var(--shadow-stretch)) calc(.0225em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.011em * var(--shadow-stretch)) calc(.025em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.012em * var(--shadow-stretch)) calc(.0275em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.013em * var(--shadow-stretch)) calc(.03em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.014em * var(--shadow-stretch)) calc(.0325em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.015em * var(--shadow-stretch)) calc(.035em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.016em * var(--shadow-stretch)) calc(.0375em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.017em * var(--shadow-stretch)) calc(.04em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.018em * var(--shadow-stretch)) calc(.0425em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.019em * var(--shadow-stretch)) calc(.045em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.02em * var(--shadow-stretch)) calc(.0475em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.021em * var(--shadow-stretch)) calc(.05em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.022em * var(--shadow-stretch)) calc(.0525em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.023em * var(--shadow-stretch)) calc(.055em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.024em * var(--shadow-stretch)) calc(.0575em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.025em * var(--shadow-stretch)) calc(.06em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.026em * var(--shadow-stretch)) calc(.0625em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.027em * var(--shadow-stretch)) calc(.065em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.028em * var(--shadow-stretch)) calc(.0675em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.029em * var(--shadow-stretch)) calc(.07em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.03em * var(--shadow-stretch)) calc(.0725em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.031em * var(--shadow-stretch)) calc(.075em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.032em * var(--shadow-stretch)) calc(.0775em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.033em * var(--shadow-stretch)) calc(.08em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.034em * var(--shadow-stretch)) calc(.0825em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.035em * var(--shadow-stretch)) calc(.085em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.036em * var(--shadow-stretch)) calc(.0875em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.037em * var(--shadow-stretch)) calc(.09em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.038em * var(--shadow-stretch)) calc(.0925em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.039em * var(--shadow-stretch)) calc(.095em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.04em * var(--shadow-stretch)) calc(.0975em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.041em * var(--shadow-stretch)) calc(.1em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.042em * var(--shadow-stretch)) calc(.1025em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.043em * var(--shadow-stretch)) calc(.105em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.044em * var(--shadow-stretch)) calc(.1075em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.045em * var(--shadow-stretch)) calc(.11em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.046em * var(--shadow-stretch)) calc(.1125em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.047em * var(--shadow-stretch)) calc(.115em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.048em * var(--shadow-stretch)) calc(.1175em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.049em * var(--shadow-stretch)) calc(.12em * var(--shadow-stretch)) var(--shadow-2),
+  calc(-.05em * var(--shadow-stretch)) calc(.1225em * var(--shadow-stretch)) var(--shadow-2);
+  // calc(-1.5px * var(--shadow-stretch)) calc(1.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-2px * var(--shadow-stretch)) calc(2px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-2.5px * var(--shadow-stretch)) calc(2.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-3px * var(--shadow-stretch)) calc(3px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-3.5px * var(--shadow-stretch)) calc(3.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-4px * var(--shadow-stretch)) calc(4px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-4.5px * var(--shadow-stretch)) calc(4.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-5px * var(--shadow-stretch)) calc(5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-5.5px * var(--shadow-stretch)) calc(5.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-6px * var(--shadow-stretch)) calc(6px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-6.5px * var(--shadow-stretch)) calc(6.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-7px * var(--shadow-stretch)) calc(7px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-7.5px * var(--shadow-stretch)) calc(7.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-8px * var(--shadow-stretch)) calc(8px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-8.5px * var(--shadow-stretch)) calc(8.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-9px * var(--shadow-stretch)) calc(9px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-9.5px * var(--shadow-stretch)) calc(9.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-10px * var(--shadow-stretch)) calc(10px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-10.5px * var(--shadow-stretch)) calc(10.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-11px * var(--shadow-stretch)) calc(11px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-11.5px * var(--shadow-stretch)) calc(11.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-12px * var(--shadow-stretch)) calc(12px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-12.5px * var(--shadow-stretch)) calc(12.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-13px * var(--shadow-stretch)) calc(13px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-13.5px * var(--shadow-stretch)) calc(13.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-14px * var(--shadow-stretch)) calc(14px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-14.5px * var(--shadow-stretch)) calc(14.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-15px * var(--shadow-stretch)) calc(15px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-15.5px * var(--shadow-stretch)) calc(15.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-16px * var(--shadow-stretch)) calc(16px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-16.5px * var(--shadow-stretch)) calc(16.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-17px * var(--shadow-stretch)) calc(17px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-17.5px * var(--shadow-stretch)) calc(17.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-18px * var(--shadow-stretch)) calc(18px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-18.5px * var(--shadow-stretch)) calc(18.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-19px * var(--shadow-stretch)) calc(19px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-19.5px * var(--shadow-stretch)) calc(19.5px * var(--shadow-stretch)) var(--shadow-2),
+  // calc(-20px * var(--shadow-stretch)) calc(20px * var(--shadow-stretch)) var(--shadow-2);
 
   &::before, &::after {
     content: '';
@@ -62,11 +138,11 @@
   }
 
   &::before {
-    top: -25%;
+    top: -45%;
   }
 
   &::after {
-    top: 100%;
+    top: 82%;
   }
 }
 
@@ -82,7 +158,7 @@
   outline: none;
   padding: 0 .04em;
   margin: 0 -.04em;
-  transform: translate3d(0,0,0);
+  transform: translateY(-4%);
   
   &::selection {
     background: none;
@@ -91,16 +167,9 @@
 
   &::before {
     content: attr(data-letter);
-    color: var(--shadow-1);
+    color: var(--shadow-2);
     position: absolute;
     z-index: -1;
-    text-shadow: var(--layer-1-x) var(--layer-1-y) 0px var(--shadow-1),
-    var(--layer-2-x) var(--layer-2-y) 0px var(--shadow-2),
-    var(--layer-3-x) var(--layer-3-y) 0px var(--shadow-3);
-    transform: scaleY(calc(1 + (var(--scrollY-pos)*.001)));
-    transform-origin: top;
-    opacity: .5;
-    // filter: blur(10px);
   }
 
   [data-theme="neo"] & {
@@ -110,20 +179,32 @@
   }
 
   &:hover, &.active {
-    transform: translate3D(0, calc(var(--layer-3-y)/3), 0) scale(.995);
     color: var(--text-pressed);
-    text-shadow: var(--text-shadow);
   }
 
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      z-index: #{10 - $i};
+    }
+ }
+
   &:nth-child(1 of .letter) {
-    letter-spacing: -.05em;
+    letter-spacing: -.095em;
   }
 
   &:nth-child(2 of .letter) {
-    letter-spacing: .001em;
+    letter-spacing: -.05em;
   }
-
+  
   &:nth-child(4 of .letter) {
     margin-left: .05em;
+  }
+  
+  &:nth-child(5 of .letter) {
+    letter-spacing: -.07em;
+  }
+
+  &:nth-child(6 of .letter) {
+    letter-spacing: -.05em;
   }
 }
