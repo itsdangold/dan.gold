@@ -1,35 +1,35 @@
 @font-face {
-  font-family: 'Degular';
-  src: url('/fonts/DegularDisplay-Bold.otf') format('opentype');
+  font-family: 'Suisse';
+  src: url('/fonts/SuisseIntl-Black.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Degular';
-  src: url('/fonts/DegularDisplay-Medium.otf') format('opentype');
-  font-weight: 500;
+  font-family: 'Suisse';
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Mori';
-  src: url('/fonts/PPMori-Regular.otf') format('opentype');
+  font-family: 'Departure Mono';
+  src: url('/fonts/DepartureMono-Regular.woff') format('woff');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Mori', sans-serif;
+  font-family: 'Suisse', sans-serif;
   font-weight: 500;
   color: var(--black-90);
 }
 
 h1, h2, h3 {
-  font-family: 'Degular', sans-serif;
+  font-family: 'Departure Mono', sans-serif;
   line-height: 100%;
 }
 
@@ -48,7 +48,7 @@ h3 {
 }
 
 h4, .label {
-  font-family: 'Degular';
+  font-family: 'Departure Mono';
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
