@@ -24,50 +24,56 @@
 
 body {
   font-family: 'Suisse', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--black-90);
 }
 
 h1, h2, h3 {
-  font-family: 'Departure Mono', sans-serif;
   line-height: 100%;
 }
 
-h2 {
-  font-size: calc(1.125vw + 1.75rem);
-  line-height: 85%;
-  letter-spacing: 0.01em;
-  font-weight: 500;
-}
-
-h3 {
-  font-size: calc(1.25vw + 1.5rem);
-  line-height: 85%;
-  letter-spacing: 0.01em;
-  font-weight: 500;
-}
-
 h4, .label {
-  font-family: 'Departure Mono';
+  font-family: 'Departure Mono', monospace;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: .75rem;
+  line-height: 100%;
 }
 
-p {
-  line-height: 150%;
-  letter-spacing: -.015em;
-  font-weight: 500;
-  font-size: clamp(1rem, 1.05vw, 10rem);
-}
+// h2 {
+//   font-size: calc(1.125vw + 1.75rem);
+//   line-height: 85%;
+//   letter-spacing: 0.01em;
+//   font-weight: 500;
+// }
 
-.large {
-  line-height: 150%;
-  letter-spacing: -.015em;
-  font-weight: 500;
-  font-size: clamp(1.35rem, 2vw, 10rem);
-}
+// h3 {
+//   font-size: calc(1.25vw + 1.5rem);
+//   line-height: 85%;
+//   letter-spacing: 0.01em;
+//   font-weight: 500;
+// }
+
+// h4, .label {
+//   font-family: 'Departure Mono';
+//   text-transform: uppercase;
+//   letter-spacing: 0.05em;
+//   font-weight: 500;
+//   font-size: 1rem;
+// }
+
+// p {
+//   line-height: 150%;
+//   letter-spacing: -.015em;
+//   font-weight: 500;
+//   font-size: clamp(1rem, 1.05vw, 10rem);
+// }
+
+// .large {
+//   line-height: 150%;
+//   letter-spacing: -.015em;
+//   font-weight: 500;
+//   font-size: clamp(1.35rem, 2vw, 10rem);
+// }
 
 a {
   font-size: inherit;
