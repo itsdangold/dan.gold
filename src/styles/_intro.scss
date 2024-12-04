@@ -28,7 +28,7 @@
 }
 
 .intro__title {
-  font-size: calc((21.1vw - (var(--site-margin))));
+  font-size: calc(1rem + (20.25vw - (var(--site-margin))));
 
   display: flex;
   flex-wrap: nowrap;
@@ -40,7 +40,7 @@
   color: var(--white);
   opacity: 1;
 
-  margin-top: 3.5rem;
+  margin-top: 4.25rem;
   
   --shadow-stretch: calc(1 + (var(--scrollY-pos) * 0.01));
 
