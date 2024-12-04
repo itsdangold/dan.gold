@@ -8,6 +8,7 @@ footer {
   color: var(--text);
   z-index: 10;
   border-bottom: .25rem solid var(--underline);
+  background-color: var(--bg-secondary);
 
   div {
     z-index: 2;
@@ -35,28 +36,8 @@ footer {
     transform: translateY(-50%) scale(1);
     width: 50%;
     min-width: 40rem;
-    stroke: var(--shadow-1);
-    opacity: .3;
+    stroke: var(--text);
+    opacity: .2;
     stroke-width: .5px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 2.5rem;
-    background-color: var(--black-100);
-    border-radius: 100%;
-    filter: blur(2rem);
-    opacity: .25;
-    pointer-events: none;
-    
-    [data-theme="neo"] & {
-      background-color: var(--text);
-      opacity: .1;
-    }
   }
 }

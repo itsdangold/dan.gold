@@ -19,6 +19,7 @@ nav {
   gap: .25rem;
   color: var(--text);
   margin-right: auto;
+  align-items: flex-start;
   
   > * {
     color: inherit;
@@ -50,27 +51,28 @@ nav {
       padding-left: .75em;
     }
 
-    &.active::before {
+    &.active::before, &.active:focus-visible::before {
+      display: block;
       opacity: 1;
       transform: translate(0%, -50%);
       // animation: blink 1s linear forwards infinite;
 
-      @keyframes blink {
-        0% {
-          opacity: 0;
-        }
-        50% {
-          opacity: 0;
-        }
+      // @keyframes blink {
+      //   0% {
+      //     opacity: 0;
+      //   }
+      //   50% {
+      //     opacity: 0;
+      //   }
 
-        51% {
-          opacity: 1;
-        }
+      //   51% {
+      //     opacity: 1;
+      //   }
 
-        100% {
-          opacity: 1;
-        }
-      }
+      //   100% {
+      //     opacity: 1;
+      //   }
+      // }
     }
   }
 }
@@ -130,13 +132,12 @@ nav {
 
   &__callout {
     border-right: 1rem;
-  //   padding-right: 2rem;
   }
 }
 
 .copy {
   background-image: linear-gradient(var(--underline), var(--underline));
-  background-size: 100% 12%;
+  background-size: 100% 0%;
   background-position: 100% 100%;
   background-repeat: no-repeat;
   transition: background-size .15s ease;

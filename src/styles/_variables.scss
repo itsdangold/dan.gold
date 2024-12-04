@@ -16,7 +16,8 @@
 }
 
 [data-theme="light"] {
-  --bg: hsl(var(--hue), 40%, 93%);
+  --bg: hsl(var(--hue), 40%, 96%);
+  --bg-secondary: hsla(var(--hue), 50%, 20%, .1);
   --text: hsl(var(--hue), 25%, 20%);
   --selection-bg: hsla(var(--hue), 30%, 80%, 0.75);
   --underline: hsl(var(--hue), 50%, 60%);
@@ -24,6 +25,7 @@
 
 [data-theme="dark"] {
   --bg: hsl(var(--hue), 17%, 12%);
+  --bg-secondary: hsla(var(--hue), 27%, 80%, .1);
   --text: hsl(var(--hue), 100%, 92%);
   --underline: hsl(var(--hue), 100%, 70%);
 }

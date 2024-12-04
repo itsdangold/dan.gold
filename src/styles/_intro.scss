@@ -9,7 +9,6 @@
 
 .intro__description {
   width: auto;
-  // margin-top: 1rem;
 
   p, a {
     max-width: 40ch;
@@ -33,7 +32,7 @@
   color: var(--white);
   opacity: 1;
 
-  margin-top: 3rem;
+  margin-top: 3.5rem;
   
   --shadow-stretch: calc(1 + (var(--scrollY-pos) * 0.01));
 
@@ -44,7 +43,7 @@
       $shadow: ();
   
       @for $i from 1 through $steps {
-        $lightness: 83% + ($i * .25);
+        $lightness: 85% + ($i * .25);
         $x-offset: calc(($i * -.06vw) * var(--shadow-stretch));
         $y-offset: calc(($i * .1vw) * var(--shadow-stretch));
         $shadow: append($shadow, #{$x-offset} #{$y-offset} hsl(var(--hue), 40%, $lightness), comma);
