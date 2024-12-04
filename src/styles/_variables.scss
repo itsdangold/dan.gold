@@ -1,5 +1,5 @@
 :root {
-  --site-margin: 1.5rem;
+  --site-margin: clamp(1rem, 2vw, 1.5rem);
 
   --radius: .5rem;
 
