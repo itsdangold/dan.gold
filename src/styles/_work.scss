@@ -1,7 +1,7 @@
 .work {
   scroll-margin: 6rem;
   z-index: 20;
-  margin-top: 1.5vw;
+  margin-top: 2vw;
 
   padding: var(--site-margin);
 
@@ -10,6 +10,9 @@
   }
 
   &-intro {
+    display: flex;
+    flex-direction: column;
+    
     * + * {
       margin-top: 1rem;
     }
@@ -23,7 +26,6 @@
   z-index: 20;
   margin-top: 2rem;
   padding-bottom: 8vw;
-  flex-flow: wrap-reverse;
 
   &-description {
     flex-basis: 20ch;
