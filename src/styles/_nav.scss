@@ -11,6 +11,7 @@ header {
   width: 100%;
   z-index: 1000;
   gap: 1.5rem;
+  background: linear-gradient(hsla(var(--bg-transparent), .4), hsla(var(--bg-transparent), 0));
 }
 
 nav {

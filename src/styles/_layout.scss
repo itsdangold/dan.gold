@@ -1,6 +1,11 @@
 body {
   background-color: var(--bg);
   color: var(--text);
+}
+
+main {
+  background-color: var(--bg);
+  box-shadow: var(--shadow);
   
   &::after {
     [data-theme="neo"] & {
@@ -12,8 +17,8 @@ body {
   
       background: repeating-linear-gradient(transparent, transparent .5rem, hsl(149, 59%, 12%) .5rem, hsl(149, 59%, 12%) .5625rem);
       filter: blur(.1rem);
-      mix-blend-mode: difference;
-      opacity: .7;
+      mix-blend-mode: multiply;
+      opacity: .5;
       background-size: 100% .5625rem;
     }
   
@@ -24,9 +29,9 @@ body {
       inset: 0;
       z-index: -1;
   
-      background: repeating-linear-gradient(transparent, transparent 1rem, hsl(0, 0%, 100%) 1rem, hsl(0, 0%, 100%) calc(1rem + 0.09375rem)),
-      repeating-linear-gradient(90deg, transparent, transparent 1rem, hsl(0, 0%, 100%) 1rem, hsl(0, 0%, 100%) calc(1rem + 0.09375rem));
-      background-size: 100% calc(1rem + 0.09375rem);
+      background: repeating-linear-gradient(transparent, transparent var(--site-margin), hsl(0, 0%, 100%) var(--site-margin), hsl(0, 0%, 100%) calc(var(--site-margin) + 0.09375rem)),
+      repeating-linear-gradient(90deg, transparent, transparent var(--site-margin), hsl(0, 0%, 100%) var(--site-margin), hsl(0, 0%, 100%) calc(var(--site-margin) + 0.09375rem));
+      background-size: 100% calc(var(--site-margin) + 0.09375rem);
       opacity: .1;
     }
   }

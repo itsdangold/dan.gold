@@ -10,6 +10,14 @@
 .intro__description {
   width: auto;
 
+  p {
+    color: var(--text-primary);
+  }
+
+  a {
+    color: var(--text-secondary);
+  }
+
   p, a {
     max-width: 40ch;
   
@@ -20,7 +28,7 @@
 }
 
 .intro__title {
-  font-size: calc((21vw - (var(--site-margin))));
+  font-size: calc((21.1vw - (var(--site-margin))));
 
   display: flex;
   flex-wrap: nowrap;

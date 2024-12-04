@@ -9,6 +9,9 @@ footer {
   z-index: 10;
   border-bottom: .25rem solid var(--underline);
   background-color: var(--bg-secondary);
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
 
   div {
     z-index: 2;
@@ -39,5 +42,13 @@ footer {
     stroke: var(--text);
     opacity: .2;
     stroke-width: .5px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 2vw;
   }
 }

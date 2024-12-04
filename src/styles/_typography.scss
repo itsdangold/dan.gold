@@ -22,14 +22,22 @@
   font-display: swap;
 }
 
-body {
+html {
   font-family: 'Suisse', sans-serif;
   font-weight: 400;
   color: var(--black-90);
+font-size: clamp(1rem, .8vw, 10rem);
 }
 
 h1, h2, h3 {
   line-height: 100%;
+}
+
+h2, .large {
+  line-height: 120%;
+  letter-spacing: -.04em;
+  font-weight: 400;
+  font-size: calc(1.25vw + 1.125rem);
 }
 
 h4, .label {
@@ -39,42 +47,10 @@ h4, .label {
   line-height: 100%;
 }
 
-// h2 {
-//   font-size: calc(1.125vw + 1.75rem);
-//   line-height: 85%;
-//   letter-spacing: 0.01em;
-//   font-weight: 500;
-// }
-
-// h3 {
-//   font-size: calc(1.25vw + 1.5rem);
-//   line-height: 85%;
-//   letter-spacing: 0.01em;
-//   font-weight: 500;
-// }
-
-// h4, .label {
-//   font-family: 'Departure Mono';
-//   text-transform: uppercase;
-//   letter-spacing: 0.05em;
-//   font-weight: 500;
-//   font-size: 1rem;
-// }
-
-// p {
-//   line-height: 150%;
-//   letter-spacing: -.015em;
-//   font-weight: 500;
-//   font-size: clamp(1rem, 1.05vw, 10rem);
-// }
-
-h2, .large {
-  line-height: 120%;
-  font-size: 2.25rem;
-  letter-spacing: -.04em;
-  font-weight: 400;
-}
-
 a {
   font-size: inherit;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
 }

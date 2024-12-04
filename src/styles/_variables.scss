@@ -1,5 +1,7 @@
 :root {
-  --site-margin: 1.25rem;
+  --site-margin: 1.5rem;
+
+  --radius: .5rem;
 
   --white: hsl(0, 0%, 100%);
   --grey: hsla(0, 0%, 0%, 0.05);
@@ -17,34 +19,52 @@
 
 [data-theme="light"] {
   --bg: hsl(var(--hue), 40%, 96%);
+  --bg-transparent: var(--hue), 40%, 96%;
   --bg-secondary: hsla(var(--hue), 50%, 20%, .1);
   --text: hsl(var(--hue), 25%, 20%);
+  --text-secondary: hsla(var(--hue), 25%, 20%, .85);
   --selection-bg: hsla(var(--hue), 30%, 80%, 0.75);
   --underline: hsl(var(--hue), 50%, 60%);
+  --shadow: 0 .25rem 2rem hsla(var(--hue), 15%, 70%, .4), 0 .5rem 4rem hsla(var(--hue), 15%, 70%, .2);
 }
 
 [data-theme="dark"] {
   --bg: hsl(var(--hue), 17%, 12%);
+  --bg-transparent: var(--hue), 17%, 12%;
   --bg-secondary: hsla(var(--hue), 27%, 80%, .1);
   --text: hsl(var(--hue), 100%, 92%);
+  --text-secondary: hsla(var(--hue), 100%, 92%, .8);
   --underline: hsl(var(--hue), 100%, 70%);
+  --shadow: 0 .25rem 2rem hsla(var(--hue), 15%, 0%, .4), 0 .5rem 4rem hsla(var(--hue), 15%, 0%, .2);
 }
 
 [data-theme="blueprint"] {
   --bg: hsl(223, 100%, 49%);
+  --bg-transparent: 223, 100%, 49%;
+  --bg-secondary: hsla(223, 100%, 42.5%);
   --text: var(--white);
+  --text-secondary: hsla(0, 0%, 100%, 0.9);
   --underline: hsl(223, 100%, 80%);
+  --shadow: 0 .25rem 2rem hsla(223, 100%, 25%, .4), 0 .5rem 4rem hsla(223, 100%, 25%, .2);
 }
 
 [data-theme="international"] {
   --bg: hsl(22, 100%, 50%);
+  --bg-transparent: 22, 100%, 50%;
+  --bg-secondary: hsl(22, 100%, 45%);
   --text: hsl(60, 100%, 97%);
+  --text-secondary: hsla(0, 0%, 100%, 0.85);
   --underline: hsl(22, 100%, 25%);
+  --shadow: 0 .25rem 2rem hsla(22, 100%, 30%, .4), 0 .5rem 4rem hsla(22, 100%, 30%, .2);
 }
 
 [data-theme="neo"] {
   --bg: hsl(149, 59%, 8%);
+  --bg-transparent: 149, 59%, 8%;
+  --bg-secondary: hsl(149, 59%, 11%);
   --text: hsl(115, 100%, 49%);
+  --text-secondary: hsla(115, 100%, 49%, .8);
   --underline: hsla(115, 800%, 50%, .5);
   --glow: 0 0 1.5rem hsla(115, 100%, 49%, .25), 0 0 .25rem hsla(115, 100%, 49%, 1);
+  --shadow: 0 .25rem 2rem hsla(149, 59%, 2%, .4), 0 .5rem 4rem hsla(149, 59%, 2%, .2);
 }

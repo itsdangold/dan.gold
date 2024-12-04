@@ -12,12 +12,12 @@ import Logo from './Logo.astro';
   </nav>
 
   <div class="site-header__callout">
-    <p class="label">Available for work</p>
+    <p class="label text-secondary">Available for work</p>
     <button class="copy label" aria-label="Copy email" type="button">hello@dan.gold</button>
   </div>
 
   <div class="site-header__time">
-    <p class="label">Based in California</p>
+    <p class="label text-secondary">Based in California</p>
     <time class="label"></time>
   </div>
 </header>
@@ -111,7 +111,7 @@ import Logo from './Logo.astro';
       const sectionId = entry.target.getAttribute('class');
       const correspondingLink = document.querySelector(`[data-link="${sectionId}"]`);
 
-      if (!entry.isIntersecting && sectionId == 'work' && entry.boundingClientRect.top > (window.innerHeight * .3)){
+      if (!entry.isIntersecting && sectionId == 'work' && entry.boundingClientRect.top > (window.innerHeight * .8)){
         document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
         document.querySelector("[data-link='intro']").classList.add('active');
       }
@@ -151,35 +151,12 @@ import Logo from './Logo.astro';
     lettersInner.forEach((letter, index) => {
       letter.classList.remove('active');
       
-      if (letter.getAttribute('data-letter').toUpperCase() == key) {
-        letter.classList.add('active');
-
-        let timeoutId;
-
-        // Clear existing timeout if it's running
-        if (timeoutId) {
-          clearTimeout(timeoutId);
-        }
-
-        // Set new timeout
-        timeoutId = setTimeout(() => {
-          letter.classList.remove('active');
-          timeoutId = null;
-        }, 200);
-        
-        if (key == 'D' && index !== pos) {
-          letter.classList.remove('active');                      
-        }
-        
+      if (letter.getAttribute('data-letter').toUpperCase() == key) {     
         if (key == 'L') {
           toggleLines();
         }
       }
     });
-
-    if (key == 'D') {
-      pos == 0 ? pos = lettersInner.length - 1 : pos = 0;
-    }
   });
   
   // ############################
@@ -256,7 +233,7 @@ import Logo from './Logo.astro';
       }
     });
   }, {
-    rootMargin: "50% 0px 50% 0px"
+    rootMargin: "0px 0px 50% 0px"
   });
 
   lazyImages.forEach(image => {
