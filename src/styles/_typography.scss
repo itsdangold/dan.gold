@@ -14,19 +14,11 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Departure Mono';
-  src: url('/fonts/DepartureMono-Regular.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 html {
   font-family: 'Suisse', sans-serif;
   font-weight: 400;
   color: var(--black-90);
-font-size: clamp(1rem, .8vw, 10rem);
+  font-size: clamp(1rem, .8vw, 10rem);
 }
 
 h1, h2, h3 {
@@ -34,16 +26,29 @@ h1, h2, h3 {
 }
 
 h2, .large {
-  line-height: 120%;
+  line-height: 100%;
   letter-spacing: -.04em;
   font-weight: 400;
-  font-size: calc(1.25vw + 1.125rem);
+  font-size: calc(1vw + 1.125rem);
+  text-wrap: balance;
 }
 
 h4, .label {
-  font-family: 'Departure Mono', monospace;
+  font-family: 'Suisse', monospace;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: .625rem;
+  line-height: 100%;
+  letter-spacing: .075em;
+  font-variant-numeric: tabular-nums;
+}
+
+.mono {
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+}
+
+.text-s {
+  font-size: .8125rem;
   line-height: 100%;
 }
 

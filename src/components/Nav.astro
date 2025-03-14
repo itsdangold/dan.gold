@@ -6,19 +6,19 @@ import Logo from './Logo.astro';
   <Logo />
 
   <nav>
-    <a href="#" data-link="intro" class="label">Intro</a>
-    <a href="#work" data-link="work" class="label">Work</a>
-    <a href="#about" data-link="about" class="label">About</a>
+    <a href="#" data-link="intro" class="text-s">Intro</a>
+    <a href="#work" data-link="work" class="text-s">Work</a>
+    <a href="#about" data-link="about" class="text-s">About</a>
   </nav>
 
   <div class="site-header__callout">
     <p class="label text-secondary">Available for work</p>
-    <button class="copy label" aria-label="Copy email" type="button">hello@dan.gold</button>
+    <button class="copy text-s" aria-label="Copy email" type="button">hello@dan.gold</button>
   </div>
 
   <div class="site-header__time">
     <p class="label text-secondary">Based in California</p>
-    <time class="label"></time>
+    <time class="mono text-s"></time>
   </div>
 </header>
 
@@ -39,7 +39,6 @@ import Logo from './Logo.astro';
       timeZoneName: 'short',
       hour: '2-digit',
       minute: '2-digit',
-      second: '2-digit',
       hour12: true
     });
   }
@@ -81,27 +80,7 @@ import Logo from './Logo.astro';
     if (document.hasFocus()) {
       requestAnimationFrame(hueRotate);
     }
-  }, 1000 / 4);
-  
-  // ############################
-  // Shadow position
-  // ############################
-  let scrollYPos = 0;
-
-  const scrollShadow = new IntersectionObserver(() => {
-    scrollYPos = Math.round(window.scrollY);
-
-    if (scrollYPos > 100) {
-      scrollYPos = 100;
-    }
-    
-    document.documentElement.style.setProperty("--scrollY-pos", scrollYPos);
-  }, {
-    rootMargin: "-70% 0px 0px 0px",
-    threshold: Array.from(Array(101), (_,x) => x/100)
-  });
-  
-  scrollShadow.observe(document.querySelector('.scroll-shadow-position'));
+  }, 400);
 
   // ############################
   // Add active style to nav links based on section visibility
